@@ -1369,6 +1369,27 @@ hr {
   background: var(--clr-white);
 }
 
+.about-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--sp-64);
+  align-items: center;
+}
+
+.about-hero-photo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.author-photo {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(11, 31, 59, 0.14);
+}
+
 .about-name {
   font-family: var(--f-serif);
   font-size: clamp(var(--t-36), 5vw, var(--t-56));
@@ -1427,13 +1448,28 @@ hr {
 
 .expertise-item {
   padding: var(--sp-8) var(--sp-20);
-  background: var(--clr-teal-faint);
-  border: 1px solid #C2EEF3;
+  background: var(--clr-navy);
   border-radius: 100px;
-  font-size: var(--t-14);
+  font-size: var(--t-13);
   font-weight: 500;
-  color: var(--clr-navy);
-  letter-spacing: 0.01em;
+  color: var(--clr-white);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .about-hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-40);
+  }
+  .about-hero-photo {
+    order: -1;
+    justify-content: flex-start;
+  }
+  .author-photo {
+    width: 160px;
+    height: 180px;
+  }
 }
 
 /* Framework statement */
