@@ -1360,6 +1360,170 @@ hr {
 }
 
 /* ─────────────────────────────────────────────────────────
+   PAGE: COVENANTS — DOCUMENT LAYOUT
+   ───────────────────────────────────────────────────────── */
+
+/* Page header — clean document style */
+.covenants-doc-header {
+  padding: var(--sp-80) 0 var(--sp-72);
+  border-bottom: 1px solid var(--clr-border);
+  background: var(--clr-white);
+}
+
+.covenants-doc-header .label {
+  margin-bottom: var(--sp-20);
+}
+
+.covenants-doc-title {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-36), 5vw, var(--t-56));
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-20);
+}
+
+.covenants-doc-subtitle {
+  font-family: var(--f-serif);
+  font-size: var(--t-18);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--clr-muted);
+  margin-bottom: var(--sp-32);
+}
+
+.covenants-doc-preamble {
+  font-size: var(--t-16);
+  line-height: 1.8;
+  color: var(--clr-muted);
+  max-width: 680px;
+}
+
+/* Individual covenant block — two-column: numeral + content */
+.covenants-doc-list {
+  padding: var(--sp-24) 0 var(--sp-80);
+  background: var(--clr-white);
+}
+
+.covenant-doc-block {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0 var(--sp-40);
+  padding: var(--sp-64) 0;
+  border-bottom: 1px solid var(--clr-border);
+  align-items: start;
+}
+
+.covenant-doc-block:last-child {
+  border-bottom: none;
+}
+
+.covenant-doc-numeral {
+  font-family: var(--f-serif);
+  font-size: var(--t-48);
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1;
+  padding-top: var(--sp-4);
+  opacity: 0.18;
+  text-align: right;
+}
+
+.covenant-doc-content {
+  padding-top: var(--sp-4);
+}
+
+.covenant-doc-name {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clr-teal);
+  margin-bottom: var(--sp-16);
+}
+
+.covenant-doc-commitment {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-20), 2.5vw, var(--t-28));
+  font-weight: 400;
+  font-style: italic;
+  color: var(--clr-navy);
+  line-height: 1.5;
+  margin-bottom: var(--sp-20);
+  letter-spacing: -0.01em;
+}
+
+.covenant-doc-applies {
+  font-size: var(--t-14);
+  line-height: 1.75;
+  color: var(--clr-muted);
+  max-width: 600px;
+  padding-top: var(--sp-16);
+  border-top: 1px solid var(--clr-border);
+}
+
+.covenant-doc-applies strong {
+  font-weight: 600;
+  color: var(--clr-subtle);
+  font-size: var(--t-11);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--sp-6);
+}
+
+/* Closing statement */
+.covenants-closing {
+  padding: var(--sp-64) 0 var(--sp-80);
+  border-top: 2px solid var(--clr-navy);
+  background: var(--clr-white);
+}
+
+.covenants-closing-text {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-18), 2.5vw, var(--t-24));
+  font-style: italic;
+  color: var(--clr-navy);
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+.covenants-closing-text span {
+  display: block;
+  color: var(--clr-teal);
+  font-style: normal;
+  font-weight: 600;
+  margin-top: var(--sp-4);
+}
+
+.covenants-closing-byline {
+  margin-top: var(--sp-24);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-subtle);
+}
+
+/* Responsive: collapse numeral grid on mobile */
+@media (max-width: 639px) {
+  .covenant-doc-block {
+    grid-template-columns: 1fr;
+    gap: var(--sp-16);
+    padding: var(--sp-48) 0;
+  }
+
+  .covenant-doc-numeral {
+    text-align: left;
+    font-size: var(--t-32);
+    opacity: 0.25;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────
    WHITE PAPER: CONTENT-SPECIFIC STYLES
    ───────────────────────────────────────────────────────── */
 
