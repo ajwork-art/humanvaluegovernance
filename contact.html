@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Human Value Governance™ — Design partner conversations and framework feedback.">
+  <title>Contact — Human Value Governance™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       SITE HEADER
+       ════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="logo" aria-label="Human Value Governance — Home">
+          <img src="assets/images/hvg-logo.png" alt="HVG" class="logo-img">
+          <span class="logo-wordmark">Human Value Governance<sup>™</sup></span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="white-paper.html" class="nav-link">White Paper</a>
+          <a href="covenants.html" class="nav-link">Covenants</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ════════════════════════════════════════════════
+         CONTACT
+         ════════════════════════════════════════════════ -->
+    <section class="contact-section">
+      <div class="container">
+
+        <p class="label">Contact</p>
+        <h1 class="section-heading">Get in touch</h1>
+
+        <p class="contact-line">
+          For design partner conversations and framework feedback:
+          <a href="mailto:humanvaluegovernanace@gmail.com">humanvaluegovernanace@gmail.com</a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════
+       SITE FOOTER
+       ════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo-text">Human Value Governance<sup>™</sup></p>
+          <span class="footer-teal-bar" aria-hidden="true"></span>
+          <p>A framework for protecting the irreducible human capacities that AI must never replace.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Framework</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#assets">Protected Assets</a></li>
+            <li><a href="index.html#urgency">Why Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Documents</h4>
+          <ul>
+            <li><a href="white-paper.html">White Paper</a></li>
+            <li><a href="covenants.html">Seven Covenants</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Human Value Governance™. All rights reserved.</p>
+        <p class="tm-note">Human Value Governance is a trademark. Framework content may not be reproduced without attribution.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      nav.querySelectorAll('.nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

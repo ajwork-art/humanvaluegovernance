@@ -1360,6 +1360,130 @@ hr {
 }
 
 /* ─────────────────────────────────────────────────────────
+   PAGE: ABOUT
+   ───────────────────────────────────────────────────────── */
+
+.about-hero {
+  padding: var(--sp-96) 0 var(--sp-80);
+  border-bottom: 1px solid var(--clr-border);
+  background: var(--clr-white);
+}
+
+.about-name {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-36), 5vw, var(--t-56));
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-16);
+}
+
+.about-title {
+  font-size: var(--t-18);
+  font-weight: 500;
+  color: var(--clr-muted);
+  margin-bottom: 0;
+}
+
+/* Company credential strip */
+.credential-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-8) var(--sp-24);
+  margin-top: var(--sp-40);
+  padding-top: var(--sp-32);
+  border-top: 1px solid var(--clr-border);
+}
+
+.credential-strip span {
+  font-size: var(--t-13);
+  font-weight: 600;
+  color: var(--clr-subtle);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.credential-strip .cred-divider {
+  color: var(--clr-border-dk);
+  font-weight: 300;
+}
+
+/* Expertise areas grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-2) 0;
+  margin-top: var(--sp-32);
+}
+
+.expertise-item {
+  padding: var(--sp-20) 0;
+  border-bottom: 1px solid var(--clr-border);
+  font-size: var(--t-16);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-12);
+}
+
+.expertise-item::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--clr-teal);
+  flex-shrink: 0;
+}
+
+/* Framework statement */
+.framework-statement {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-22), 3vw, var(--t-32));
+  font-weight: 400;
+  color: var(--clr-navy);
+  line-height: 1.55;
+  max-width: 760px;
+  margin-top: var(--sp-32);
+}
+
+.framework-statement em {
+  font-style: normal;
+  color: var(--clr-teal);
+}
+
+/* Contact page */
+.contact-section {
+  padding: var(--sp-120) 0;
+  background: var(--clr-white);
+}
+
+.contact-line {
+  font-size: var(--t-18);
+  line-height: 1.8;
+  color: var(--clr-muted);
+  margin-top: var(--sp-24);
+}
+
+.contact-line a {
+  color: var(--clr-teal);
+  font-weight: 500;
+  border-bottom: 1px solid currentColor;
+  transition: color var(--trans);
+}
+
+.contact-line a:hover {
+  color: var(--clr-navy);
+}
+
+@media (max-width: 639px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────
    PAGE: COVENANTS — DOCUMENT LAYOUT
    ───────────────────────────────────────────────────────── */
 
