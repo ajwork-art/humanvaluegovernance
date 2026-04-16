@@ -1,0 +1,1389 @@
+/* ============================================================
+   HUMAN VALUE GOVERNANCE™
+   assets/css/styles.css
+   ============================================================
+
+   Table of Contents
+   ─────────────────────────────────────────────────────────
+    1.  Design Tokens (CSS Custom Properties)
+    2.  Reset & Base
+    3.  Typography Utilities
+    4.  Layout & Container
+    5.  Site Header & Navigation
+    6.  Buttons
+    7.  Section Labels & Shared Section Styles
+    8.  Site Footer
+    9.  Page: Homepage – Hero
+   10.  Page: Homepage – Foundation Section
+   11.  Page: Homepage – Six Protected Assets
+   12.  Page: Homepage – Why Now (Navy)
+   13.  Page: Homepage – Audience
+   14.  Page: Homepage – CTA Strip
+   15.  Page: White Paper
+   16.  Page: Seven Covenants
+   17.  Responsive Breakpoints
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────────────────────
+   1. DESIGN TOKENS
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand Colors */
+  --clr-navy:        #0B1F3B;
+  --clr-navy-mid:    #112340;
+  --clr-teal:        #0FA3B1;
+  --clr-teal-faint:  #EAF8FA;
+  --clr-amber:       #F5A623;
+  --clr-white:       #FFFFFF;
+
+  /* UI / Neutral Colors */
+  --clr-bg:          #F5F7FA;
+  --clr-off-white:   #FAFBFC;
+  --clr-text:        #1E293B;
+  --clr-muted:       #475569;
+  --clr-subtle:      #98A2B3;
+  --clr-border:      #E2E8F0;
+  --clr-border-dk:   #CBD5E1;
+
+  /* Fonts */
+  --f-serif:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --f-sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  /* Type Scale */
+  --t-11:  0.6875rem;
+  --t-12:  0.75rem;
+  --t-13:  0.8125rem;
+  --t-14:  0.875rem;
+  --t-15:  0.9375rem;
+  --t-16:  1rem;
+  --t-18:  1.125rem;
+  --t-20:  1.25rem;
+  --t-22:  1.375rem;
+  --t-24:  1.5rem;
+  --t-28:  1.75rem;
+  --t-32:  2rem;
+  --t-36:  2.25rem;
+  --t-40:  2.5rem;
+  --t-48:  3rem;
+  --t-56:  3.5rem;
+  --t-64:  4rem;
+  --t-72:  4.5rem;
+
+  /* Spacing (4px grid) */
+  --sp-2:   2px;
+  --sp-4:   4px;
+  --sp-6:   6px;
+  --sp-8:   8px;
+  --sp-10:  10px;
+  --sp-12:  12px;
+  --sp-14:  14px;
+  --sp-16:  16px;
+  --sp-20:  20px;
+  --sp-24:  24px;
+  --sp-28:  28px;
+  --sp-32:  32px;
+  --sp-40:  40px;
+  --sp-48:  48px;
+  --sp-56:  56px;
+  --sp-64:  64px;
+  --sp-72:  72px;
+  --sp-80:  80px;
+  --sp-96:  96px;
+  --sp-120: 120px;
+  --sp-160: 160px;
+
+  /* Layout */
+  --w-container: 1200px;
+  --w-read:      700px;
+  --w-narrow:    880px;
+  --header-h:    72px;
+
+  /* Motion */
+  --ease:  cubic-bezier(0.4, 0, 0.2, 1);
+  --trans: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   2. RESET & BASE
+   ───────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--f-sans);
+  font-size: var(--t-16);
+  line-height: 1.7;
+  color: var(--clr-text);
+  background: var(--clr-white);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+sup {
+  font-size: 0.5em;
+  vertical-align: super;
+  line-height: 0;
+  letter-spacing: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--clr-border);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   3. TYPOGRAPHY UTILITIES
+   ───────────────────────────────────────────────────────── */
+
+/* Section eyebrow label */
+.label {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-teal);
+  margin-bottom: var(--sp-20);
+}
+
+.label--light {
+  color: rgba(15, 163, 177, 0.8);
+}
+
+.label--muted {
+  color: var(--clr-subtle);
+}
+
+/* Primary display heading (hero) */
+.display-heading {
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--clr-navy);
+  letter-spacing: -0.02em;
+}
+
+.display-heading--xl {
+  font-size: clamp(var(--t-40), 6.5vw, var(--t-72));
+}
+
+.display-heading--lg {
+  font-size: clamp(var(--t-32), 5vw, var(--t-56));
+}
+
+/* Section heading */
+.section-heading {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-28), 3.5vw, var(--t-40));
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--clr-navy);
+  letter-spacing: -0.015em;
+}
+
+.section-heading--light {
+  color: var(--clr-white);
+}
+
+/* Prose / body copy block */
+.prose {
+  font-size: var(--t-18);
+  line-height: 1.82;
+  color: var(--clr-muted);
+}
+
+.prose p + p {
+  margin-top: var(--sp-20);
+}
+
+/* Reading prose — long-form article typography */
+.reading-prose {
+  font-size: var(--t-18);
+  line-height: 1.85;
+  color: var(--clr-text);
+}
+
+.reading-prose p {
+  margin-bottom: var(--sp-24);
+  color: var(--clr-muted);
+}
+
+.reading-prose h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-24), 3vw, var(--t-32));
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.25;
+  margin-top: var(--sp-72);
+  margin-bottom: var(--sp-24);
+  padding-top: var(--sp-48);
+  border-top: 1px solid var(--clr-border);
+}
+
+.reading-prose h3 {
+  font-family: var(--f-serif);
+  font-size: var(--t-22);
+  font-weight: 600;
+  color: var(--clr-navy);
+  line-height: 1.35;
+  margin-top: var(--sp-48);
+  margin-bottom: var(--sp-16);
+}
+
+.reading-prose ul {
+  list-style: none;
+  margin: var(--sp-24) 0;
+}
+
+.reading-prose ul li {
+  position: relative;
+  padding-left: var(--sp-24);
+  margin-bottom: var(--sp-12);
+  color: var(--clr-muted);
+  font-size: var(--t-18);
+  line-height: 1.75;
+}
+
+.reading-prose ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--clr-teal);
+}
+
+.reading-prose blockquote {
+  border-left: 3px solid var(--clr-teal);
+  padding: var(--sp-16) var(--sp-28);
+  margin: var(--sp-48) 0;
+  background: var(--clr-bg);
+  font-style: italic;
+  font-family: var(--f-serif);
+  font-size: var(--t-20);
+  line-height: 1.65;
+  color: var(--clr-text);
+}
+
+/* Content placeholder — insert your copy here */
+.content-placeholder {
+  background: var(--clr-bg);
+  border: 1px dashed var(--clr-border-dk);
+  padding: var(--sp-40);
+  border-radius: 2px;
+  color: var(--clr-subtle);
+  font-size: var(--t-14);
+  font-style: italic;
+  text-align: center;
+  margin: var(--sp-32) 0;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   4. LAYOUT & CONTAINER
+   ───────────────────────────────────────────────────────── */
+
+.container {
+  max-width: var(--w-container);
+  margin: 0 auto;
+  padding: 0 var(--sp-40);
+}
+
+.container--narrow {
+  max-width: var(--w-narrow);
+}
+
+.container--read {
+  max-width: var(--w-read);
+}
+
+/* Section base */
+.section {
+  padding: var(--sp-120) 0;
+}
+
+.section--sm {
+  padding: var(--sp-80) 0;
+}
+
+.section--lg {
+  padding: var(--sp-160) 0;
+}
+
+/* Section background variants */
+.section--white  { background: var(--clr-white); }
+.section--gray   { background: var(--clr-bg); }
+.section--navy   { background: var(--clr-navy); }
+.section--off    { background: var(--clr-off-white); }
+
+
+/* ─────────────────────────────────────────────────────────
+   5. SITE HEADER & NAVIGATION
+   ───────────────────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: var(--header-h);
+  background: var(--clr-white);
+  border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--sp-24);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-14);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 34px;
+  width: auto;
+}
+
+.logo-wordmark {
+  font-family: var(--f-sans);
+  font-size: var(--t-13);
+  font-weight: 600;
+  color: var(--clr-navy);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Primary navigation */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-32);
+}
+
+.nav-link {
+  font-size: var(--t-14);
+  font-weight: 500;
+  color: var(--clr-muted);
+  letter-spacing: 0.01em;
+  padding-bottom: var(--sp-4);
+  border-bottom: 2px solid transparent;
+  transition: color var(--trans), border-color var(--trans);
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--clr-navy);
+}
+
+.nav-link.active {
+  color: var(--clr-navy);
+  border-bottom-color: var(--clr-teal);
+}
+
+/* Mobile menu toggle button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--sp-8);
+  color: var(--clr-navy);
+  flex-shrink: 0;
+}
+
+.nav-toggle-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  transition: transform var(--trans), opacity var(--trans);
+}
+
+/* Mobile nav state */
+.site-nav.is-open {
+  display: flex;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   6. BUTTONS
+   ───────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-8);
+  padding: 14px 28px;
+  font-family: var(--f-sans);
+  font-size: var(--t-14);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--trans), color var(--trans), border-color var(--trans);
+}
+
+/* Primary: teal fill */
+.btn-primary {
+  background: var(--clr-teal);
+  color: var(--clr-white);
+  border-color: var(--clr-teal);
+}
+
+.btn-primary:hover {
+  background: #0b8f9c;
+  border-color: #0b8f9c;
+}
+
+/* Secondary: outlined, on light bg */
+.btn-secondary {
+  background: transparent;
+  color: var(--clr-navy);
+  border-color: var(--clr-border-dk);
+}
+
+.btn-secondary:hover {
+  border-color: var(--clr-navy);
+  color: var(--clr-navy);
+}
+
+/* Secondary on dark (navy) background */
+.btn-secondary--on-dark {
+  background: transparent;
+  color: var(--clr-white);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-secondary--on-dark:hover {
+  border-color: var(--clr-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Ghost teal */
+.btn-ghost-teal {
+  background: transparent;
+  color: var(--clr-teal);
+  border-color: var(--clr-teal);
+}
+
+.btn-ghost-teal:hover {
+  background: var(--clr-teal);
+  color: var(--clr-white);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   7. SECTION LABELS & SHARED SECTION ELEMENTS
+   ───────────────────────────────────────────────────────── */
+
+.section-intro {
+  font-size: var(--t-18);
+  line-height: 1.8;
+  color: var(--clr-muted);
+  max-width: 640px;
+  margin-top: var(--sp-20);
+}
+
+.section-intro--light {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.teal-rule {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--clr-teal);
+  margin: var(--sp-20) 0;
+  border: none;
+}
+
+.teal-rule--full {
+  width: 100%;
+  height: 1px;
+  background: var(--clr-teal);
+  opacity: 0.4;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   8. SITE FOOTER
+   ───────────────────────────────────────────────────────── */
+
+.site-footer {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+  padding: var(--sp-80) 0 var(--sp-48);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--sp-64);
+  padding-bottom: var(--sp-56);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--sp-40);
+}
+
+/* Footer brand column */
+.footer-brand .footer-logo-text {
+  font-family: var(--f-sans);
+  font-size: var(--t-20);
+  font-weight: 700;
+  color: var(--clr-white);
+  letter-spacing: -0.01em;
+}
+
+.footer-teal-bar {
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: var(--clr-teal);
+  margin: var(--sp-10) 0 var(--sp-20);
+}
+
+.footer-brand p {
+  font-size: var(--t-14);
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+/* Footer nav columns */
+.footer-col h4 {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: var(--sp-20);
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+}
+
+.footer-col ul li a {
+  font-size: var(--t-14);
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--trans);
+}
+
+.footer-col ul li a:hover {
+  color: var(--clr-white);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-16);
+}
+
+.footer-bottom p {
+  font-size: var(--t-12);
+  color: rgba(255, 255, 255, 0.28);
+  line-height: 1.5;
+}
+
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.4);
+  transition: color var(--trans);
+}
+
+.footer-bottom a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   9. PAGE: HOMEPAGE – HERO
+   ───────────────────────────────────────────────────────── */
+
+.hero {
+  padding: 100px 0 120px;
+  background: var(--clr-white);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-subhead {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-20), 2.8vw, var(--t-28));
+  font-weight: 400;
+  font-style: italic;
+  color: var(--clr-muted);
+  line-height: 1.45;
+  margin-top: var(--sp-20);
+  margin-bottom: var(--sp-24);
+}
+
+.hero-body {
+  font-size: var(--t-18);
+  line-height: 1.82;
+  color: var(--clr-muted);
+  max-width: 660px;
+  margin-bottom: var(--sp-48);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+  flex-wrap: wrap;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   10. PAGE: HOMEPAGE – FOUNDATION / WHY FRAMEWORK
+   ───────────────────────────────────────────────────────── */
+
+.foundation-content {
+  max-width: var(--w-read);
+}
+
+.foundation-content .section-heading {
+  margin-bottom: var(--sp-32);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   11. PAGE: HOMEPAGE – SIX PROTECTED ASSETS
+   ───────────────────────────────────────────────────────── */
+
+.assets-header {
+  max-width: var(--w-narrow);
+  margin-bottom: var(--sp-64);
+}
+
+.assets-header .section-heading {
+  margin-bottom: var(--sp-16);
+}
+
+.assets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--clr-border);
+  border: 1px solid var(--clr-border);
+}
+
+.asset-item {
+  background: var(--clr-white);
+  padding: var(--sp-40) var(--sp-40);
+}
+
+.asset-number {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--clr-teal);
+  margin-bottom: var(--sp-16);
+}
+
+.asset-title {
+  font-family: var(--f-serif);
+  font-size: var(--t-22);
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.25;
+  margin-bottom: var(--sp-14);
+}
+
+.asset-desc {
+  font-size: var(--t-15);
+  line-height: 1.75;
+  color: var(--clr-muted);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   12. PAGE: HOMEPAGE – WHY NOW (NAVY)
+   ───────────────────────────────────────────────────────── */
+
+.why-now-header {
+  max-width: var(--w-narrow);
+  margin-bottom: var(--sp-64);
+}
+
+.why-now-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-56) var(--sp-80);
+}
+
+.why-now-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: var(--sp-32);
+}
+
+.why-now-item h3 {
+  font-family: var(--f-serif);
+  font-size: var(--t-22);
+  font-weight: 600;
+  color: var(--clr-white);
+  margin-bottom: var(--sp-14);
+  line-height: 1.3;
+}
+
+.why-now-item p {
+  font-size: var(--t-16);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   13. PAGE: HOMEPAGE – AUDIENCE
+   ───────────────────────────────────────────────────────── */
+
+.audience-header {
+  max-width: var(--w-narrow);
+  margin-bottom: var(--sp-56);
+}
+
+.audience-header .section-heading {
+  margin-bottom: var(--sp-16);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-32);
+}
+
+.audience-item {
+  padding: var(--sp-32) var(--sp-32);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+}
+
+.audience-item h3 {
+  font-family: var(--f-sans);
+  font-size: var(--t-15);
+  font-weight: 600;
+  color: var(--clr-navy);
+  margin-bottom: var(--sp-10);
+  letter-spacing: 0.01em;
+}
+
+.audience-item p {
+  font-size: var(--t-14);
+  line-height: 1.72;
+  color: var(--clr-muted);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   14. PAGE: HOMEPAGE – CTA STRIP
+   ───────────────────────────────────────────────────────── */
+
+.cta-strip {
+  background: var(--clr-navy);
+  padding: var(--sp-80) 0;
+}
+
+.cta-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-48);
+  flex-wrap: wrap;
+}
+
+.cta-strip-text h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-24), 3vw, var(--t-36));
+  font-weight: 700;
+  color: var(--clr-white);
+  line-height: 1.2;
+  margin-bottom: var(--sp-12);
+}
+
+.cta-strip-text p {
+  font-size: var(--t-16);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cta-strip-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   15. PAGE: WHITE PAPER
+   ───────────────────────────────────────────────────────── */
+
+/* Article hero header (navy) */
+.paper-hero {
+  background: var(--clr-navy);
+  padding: var(--sp-80) 0 var(--sp-96);
+  border-bottom: 3px solid var(--clr-teal);
+}
+
+.paper-hero-inner {
+  max-width: var(--w-read);
+}
+
+.paper-hero .label {
+  color: rgba(15, 163, 177, 0.85);
+  margin-bottom: var(--sp-24);
+}
+
+.paper-title {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-32), 5vw, var(--t-56));
+  font-weight: 700;
+  color: var(--clr-white);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-24);
+}
+
+.paper-subtitle {
+  font-family: var(--f-serif);
+  font-size: var(--t-20);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin-bottom: var(--sp-32);
+}
+
+.paper-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-24);
+  flex-wrap: wrap;
+}
+
+.paper-meta span {
+  font-size: var(--t-13);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+}
+
+.paper-meta .meta-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Article layout: TOC sidebar + reading column */
+.paper-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--sp-80);
+  padding: var(--sp-80) 0 var(--sp-120);
+  align-items: start;
+}
+
+/* Table of contents sidebar */
+.paper-toc {
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-48));
+}
+
+.paper-toc h4 {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-subtle);
+  margin-bottom: var(--sp-20);
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid var(--clr-border);
+}
+
+.toc-list li a {
+  display: block;
+  padding: var(--sp-8) var(--sp-16);
+  font-size: var(--t-13);
+  color: var(--clr-subtle);
+  line-height: 1.5;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+  transition: color var(--trans), border-color var(--trans);
+}
+
+.toc-list li a:hover,
+.toc-list li a.active {
+  color: var(--clr-teal);
+  border-left-color: var(--clr-teal);
+}
+
+/* Reading column */
+.paper-reading {
+  max-width: var(--w-read);
+}
+
+/* Abstract block */
+.paper-abstract {
+  background: var(--clr-bg);
+  border-left: 3px solid var(--clr-teal);
+  padding: var(--sp-32) var(--sp-40);
+  margin-bottom: var(--sp-64);
+}
+
+.paper-abstract h3 {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-teal);
+  margin-bottom: var(--sp-16);
+}
+
+.paper-abstract p {
+  font-size: var(--t-16);
+  line-height: 1.8;
+  color: var(--clr-muted);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   16. PAGE: SEVEN COVENANTS
+   ───────────────────────────────────────────────────────── */
+
+/* Page hero */
+.covenants-hero {
+  background: var(--clr-navy);
+  padding: var(--sp-96) 0;
+  text-align: center;
+  border-bottom: 3px solid var(--clr-teal);
+}
+
+.covenants-hero .label {
+  justify-content: center;
+  color: rgba(15, 163, 177, 0.8);
+  margin-bottom: var(--sp-24);
+}
+
+.covenants-hero-title {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-40), 6vw, var(--t-64));
+  font-weight: 700;
+  color: var(--clr-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-32);
+}
+
+.covenants-opening {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: var(--t-18);
+  line-height: 1.82;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  font-family: var(--f-serif);
+}
+
+/* Preamble statement */
+.covenants-preamble {
+  padding: var(--sp-80) 0;
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.covenants-preamble-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.covenants-preamble h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-24), 3vw, var(--t-32));
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.3;
+  margin-bottom: var(--sp-20);
+}
+
+.covenants-preamble p {
+  font-size: var(--t-18);
+  line-height: 1.82;
+  color: var(--clr-muted);
+}
+
+/* Individual covenant blocks */
+.covenants-list {
+  padding: var(--sp-24) 0 var(--sp-120);
+  background: var(--clr-white);
+}
+
+.covenant-block {
+  padding: var(--sp-80) 0;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.covenant-block:last-child {
+  border-bottom: none;
+}
+
+.covenant-block-inner {
+  max-width: var(--w-narrow);
+  margin: 0 auto;
+  padding: 0 var(--sp-40);
+}
+
+.covenant-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-24);
+}
+
+.covenant-numeral {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-teal);
+}
+
+.covenant-divider-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--clr-border-dk);
+  flex-shrink: 0;
+}
+
+.covenant-category {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-subtle);
+}
+
+.covenant-name {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-28), 4vw, var(--t-40));
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: var(--sp-24);
+}
+
+.covenant-teal-rule {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--clr-teal);
+  margin-bottom: var(--sp-32);
+  border: none;
+}
+
+.covenant-text {
+  font-size: var(--t-18);
+  line-height: 1.85;
+  color: var(--clr-muted);
+  max-width: 640px;
+  margin-bottom: var(--sp-32);
+}
+
+.covenant-commitment {
+  background: var(--clr-bg);
+  border-left: 3px solid var(--clr-teal);
+  padding: var(--sp-24) var(--sp-28);
+}
+
+.covenant-commitment h4 {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-teal);
+  margin-bottom: var(--sp-10);
+}
+
+.covenant-commitment p {
+  font-size: var(--t-15);
+  line-height: 1.72;
+  color: var(--clr-muted);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   17. RESPONSIVE BREAKPOINTS
+   ───────────────────────────────────────────────────────── */
+
+/* Tablet: 640px – 1024px */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--sp-32);
+  }
+
+  /* White paper: collapse to single column */
+  .paper-layout {
+    display: block;
+  }
+
+  .paper-toc {
+    display: none; /* TOC hidden on tablet/mobile */
+  }
+}
+
+@media (max-width: 860px) {
+  /* Assets grid: 2 columns on tablet */
+  .assets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Why now: single column */
+  .why-now-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-40);
+  }
+
+  /* Audience: 2 columns */
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer: two columns */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-40);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* CTA strip: stacked */
+  .cta-strip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile: < 640px */
+@media (max-width: 639px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .container {
+    padding: 0 var(--sp-20);
+  }
+
+  .section {
+    padding: var(--sp-80) 0;
+  }
+
+  .section--sm {
+    padding: var(--sp-56) 0;
+  }
+
+  /* Header: show toggle, hide nav */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--clr-white);
+    border-bottom: 1px solid var(--clr-border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--sp-8) 0 var(--sp-16);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  .site-nav .nav-link {
+    width: 100%;
+    padding: var(--sp-14) var(--sp-24);
+    border-bottom: none;
+    font-size: var(--t-15);
+  }
+
+  .site-nav .nav-link.active {
+    color: var(--clr-teal);
+    border-bottom: none;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  /* Logo wordmark: hide on very small */
+  .logo-wordmark {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: var(--sp-72) 0 var(--sp-80);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 360px;
+  }
+
+  /* Assets: single column */
+  .assets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Audience: single column */
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer: single column */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-40);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Covenant block */
+  .covenant-block {
+    padding: var(--sp-56) 0;
+  }
+
+  .covenant-block-inner {
+    padding: 0 var(--sp-20);
+  }
+
+  /* CTA strip */
+  .cta-strip-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Paper hero */
+  .paper-hero {
+    padding: var(--sp-56) 0 var(--sp-72);
+  }
+}
+
+/* Print styles for white paper */
+@media print {
+  .site-header,
+  .site-footer,
+  .paper-toc,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  .paper-layout {
+    display: block;
+  }
+
+  .paper-hero {
+    background: none;
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .paper-title {
+    color: #000;
+  }
+}
