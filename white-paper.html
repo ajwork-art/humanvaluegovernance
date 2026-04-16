@@ -1,93 +1,947 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Human Value Governance™ White Paper — The governance framework for protecting irreducible human capacities in the age of artificial intelligence." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Human Value Governance™ White Paper — A Framework for Protecting What AI Must Never Replace. By Anitha Jagadeesh, April 2026.">
+  <meta property="og:title" content="White Paper — Human Value Governance™">
+  <meta property="og:description" content="A framework for protecting what AI must never replace.">
+  <meta property="og:type" content="article">
+
   <title>White Paper — Human Value Governance™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+
+  <!-- ═══════════════════════════════════════════════════
+       SITE HEADER
+       ═══════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="logo" aria-label="Human Value Governance — Home">
+          <img src="assets/images/hvg-logo.png" alt="HVG" class="logo-img">
+          <span class="logo-wordmark">Human Value Governance<sup>™</sup></span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="index.html" class="nav-link">Framework</a>
+          <a href="white-paper.html" class="nav-link active">White Paper</a>
+          <a href="covenants.html" class="nav-link">Seven Covenants</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+
   <main>
-    <header>
-      <p>White Paper</p>
-      <h1>Human Value Governance™: A Framework for Protecting What AI Must Never Replace</h1>
-      <p>On the irreducible human capacities that governance must protect, the covenants that make those protections operational, and the institutional commitments required to sustain them.</p>
-      <p>Human Value Governance™ • Framework White Paper • 2026</p>
+
+    <!-- ═══════════════════════════════════════════════════
+         ARTICLE HERO
+         ═══════════════════════════════════════════════════ -->
+    <header class="paper-hero">
+      <div class="container">
+        <div class="paper-hero-inner">
+
+          <p class="label">White Paper</p>
+
+          <h1 class="paper-title">
+            Human Value Governance™:<br>
+            A Framework for Protecting What<br>AI Must Never Replace
+          </h1>
+
+          <p class="paper-subtitle">
+            On the irreducible human capacities that governance must protect, the covenants
+            that make those protections operational, and the institutional commitments
+            required to sustain them.
+          </p>
+
+          <div class="paper-meta">
+            <span>Anitha Jagadeesh</span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <span>April 2026</span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <span>Framework White Paper</span>
+          </div>
+
+        </div>
+      </div>
     </header>
 
-    <article>
-      <section id="abstract">
-        <h2>Abstract</h2>
-        <p>This paper establishes the conceptual and operational foundations of Human Value Governance™ — a governance framework designed to protect six irreducible human capacities from displacement by artificial intelligence. It defines the protected assets, articulates the seven covenants that operationalize those protections, and proposes a structured implementation approach for organizations seeking to adopt the framework as institutional policy.</p>
-      </section>
 
-      <section id="section-1">
-        <h2>1. The Governance Imperative</h2>
-        <p>Enterprise AI governance is being built around the wrong center of gravity. Most organizations know how to ask whether data is protected, and some are learning to ask whether models are reliable, explainable, tested, and compliant. But far fewer are asking the harder question now sitting underneath real deployment: what human value is this system allowed to optimize, and what human value must it never be allowed to erase?</p>
-        <p>That is the governance gap Human Value Governance™ names. Data governance protects information flows. Model governance protects model behavior. Human Value Governance protects the human qualities organizations depend on when AI systems are placed above people in real workflows. It asks not only whether a model is accurate, but accurate against what definition of value; not only whether a workflow is efficient, but what human capability becomes impossible once the workflow is optimized; and not only whether a system can make a decision, but whether that decision should ever be made without human moral judgment present.</p>
-        <blockquote>“The question is not whether organizations will use AI — it is whether they will use it in ways that preserve the human capacities on which sound judgment depends.”</blockquote>
-      </section>
+    <!-- ═══════════════════════════════════════════════════
+         TWO-COLUMN LAYOUT: TOC + READING COLUMN
+         ═══════════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="paper-layout">
 
-      <section id="section-2">
-        <h2>2. What Must Not Be Displaced</h2>
-        <p>Human Value Governance begins with a simple distinction: AI should augment human capability, not replace human judgment in value-sensitive contexts. The issue is not whether AI can improve speed, scale, or pattern recognition. It can. The issue is whether organizations are allowing those gains to quietly displace the very human capacities that created trust, loyalty, judgment, and resilience in the first place.</p>
-        <p>The warning signs are already visible in customer service, hiring, HR systems, and performance management. A support representative who stays on a call because a customer is grieving may be flagged for exceeding time thresholds. A candidate with a non-linear career path may be filtered out before a human ever sees their file. A manager may begin to trust an AI performance score more than their own contextual understanding. In each case, the tool does not simply automate a task. It starts defining what counts.</p>
-        <p>The deeper problem is that AI systems are stateless by design while human wisdom is cumulative by nature. Humans learn from mistakes, context, and consequence. AI systems typically do not carry that lived moral memory. When organizations allow stateless systems to supervise human beings without a governance layer that preserves empathy, judgment, and presence, they risk institutional self-harm disguised as modernization.</p>
-      </section>
+        <!-- ── TABLE OF CONTENTS (sticky sidebar) ── -->
+        <aside class="paper-toc" aria-label="Table of contents">
+          <h4>Contents</h4>
+          <ol class="toc-list">
+            <li><a href="#section-1">1. The Governance Gap</a></li>
+            <li><a href="#section-2">2. Why This Is Happening Now</a></li>
+            <li><a href="#section-3">3. What AI Was Built For</a></li>
+            <li><a href="#section-4">4. What HVG Protects</a></li>
+            <li><a href="#section-5">5. The Critical Thinking Crisis</a></li>
+            <li><a href="#section-6">6. When AI Should and Should Not Be Used</a></li>
+            <li><a href="#section-7">7. Existing Frameworks</a></li>
+            <li><a href="#section-8">8. The Human Value Covenants</a></li>
+            <li><a href="#section-9">9. Five Years Without This Framework</a></li>
+            <li><a href="#section-10">10. What Organizations Must Do</a></li>
+            <li><a href="#section-11">11. The Path to Standards</a></li>
+            <li><a href="#appendix">Appendix — Quick Reference</a></li>
+          </ol>
+        </aside>
 
-      <section id="section-3">
-        <h2>3. Six Protected Assets</h2>
-        <p>Human Value Governance protects six human capacities as enterprise assets: empathy, moral judgment, trust, experiential wisdom, emotional presence, and critical thinking. These are not soft ideals. They are operating assets that determine whether human-centered decisions remain humane, defensible, and accountable.</p>
 
-        <h3>3.1 Empathy</h3>
-        <p>Empathy is the organizational capacity to recognize the human context behind a transaction and respond in a way that serves the person, not just the process. In practice, empathy is what allows a frontline employee to notice distress that no policy field captures and to respond with care rather than procedural closure.</p>
+        <!-- ── READING COLUMN ── -->
+        <article class="paper-reading reading-prose" aria-label="White paper">
 
-        <h3>3.2 Moral Judgment</h3>
-        <p>Moral judgment is the capacity to make a principled decision when policy is incomplete, values conflict, or ambiguity cannot be resolved by rules alone. It is the difference between asking whether an AI system can be used and asking whether it should be used in the first place.</p>
+          <!-- Opening epigraph -->
+          <p class="paper-opening-question">
+            Are we making AI more like humans — or humans more like AI?
+          </p>
+          <p class="paper-opening-answer">Because right now, the evidence points to the latter.</p>
 
-        <h3>3.3 Trust</h3>
-        <p>Trust is the accumulated evidence that an organization does what it says, knows the limits of what it knows, and does not ask people to move faster than its integrity can support. When AI shapes customer relationships or employee outcomes, trust is built or spent through the quality of human accountability around those decisions.</p>
 
-        <h3>3.4 Experiential Wisdom</h3>
-        <p>Experiential wisdom is knowledge built through consequence, recovery, and reflection. It cannot be transferred fully through documentation or pattern matching. Organizations that automate away the roles through which people acquire this wisdom are not just streamlining work; they are weakening the future judgment capacity of the institution itself.</p>
+          <!-- ─────────────────────────────────────────
+               SECTION 1
+               ───────────────────────────────────────── -->
+          <section id="section-1">
+            <h2>Section 1 — The Governance Gap Nobody Is Naming</h2>
 
-        <h3>3.5 Emotional Presence</h3>
-        <p>Emotional presence is the capacity to be genuinely with another human being in a moment that matters. It is what makes human oversight meaningful rather than nominal. A person who is present can notice what the score did not capture, what the workflow did not register, and what the affected person actually needs.</p>
+            <p>Enterprise AI governance is being built around the wrong center of gravity.</p>
 
-        <h3>3.6 Critical Thinking</h3>
-        <p>Critical thinking is the capacity to reason through uncertainty, weigh incomplete evidence, and defend a judgment while remaining open to revision. Governance depends on it. Without critical thinking, the human in the loop becomes a formality rather than a real source of oversight.</p>
-      </section>
+            <p>Right now, most organizations know how to ask whether data is protected. Some are learning how to ask whether models are reliable, explainable, tested, and compliant. But almost nobody is asking the harder question now sitting underneath real deployment:</p>
 
-      <section id="section-4">
-        <h2>4. The Seven Covenants</h2>
-        <p>The framework operationalizes these protected assets through seven covenants: Presence, Judgment, Dignity, Growth, Transparency, Wisdom, and Accountability. These are not symbolic statements. They are governance commitments that organizations can document, audit, and evidence.</p>
-        <p><strong>The Covenant of Presence</strong> holds that AI must never replace the human obligation to be present in moments that materially depend on empathy, emotional presence, or relational trust.</p>
-        <p><strong>The Covenant of Judgment</strong> requires that AI never make an irreversible decision about a human being without review by a named human with authority and responsibility.</p>
-        <p><strong>The Covenant of Dignity</strong> rejects reducing people to a score or metric without context, nuance, and the possibility of human understanding.</p>
-        <p><strong>The Covenant of Growth</strong> rejects holding humans to consistency standards that the AI systems evaluating them do not themselves meet, especially where context and development matter.</p>
-        <p><strong>The Covenant of Transparency</strong> gives every person affected by an AI-shaped decision the right to know AI was involved, what criteria mattered, and how to seek human review.</p>
-        <p><strong>The Covenant of Wisdom</strong> protects non-linear backgrounds, context-dependent potential, and forms of lived experience that pattern matching systems routinely flatten or exclude.</p>
-        <p><strong>The Covenant of Accountability</strong> requires a named human being to answer for the outcomes of every AI system that affects people. Without accountability, governance becomes theater.</p>
-      </section>
+            <blockquote>What human value is this system allowed to optimize, and what human value must it never be allowed to erase?</blockquote>
 
-      <section id="section-5">
-        <h2>5. Implementation Framework</h2>
-        <p>Implementation begins by mapping where AI is placed above people: hiring funnels, customer service workflows, worker management systems, performance evaluation platforms, and other consequential contexts. Organizations then identify which human values are at stake in each workflow and determine which decisions are reversible, irreversible, or developmentally significant.</p>
-        <p>From there, the framework can be adopted through a Human Value Audit, a human-value-aligned agent evaluation framework, and operational controls that ensure escalation when a protected human asset is at risk. The work spans design time, runtime, and evaluation time. It includes defining which values must be preserved, setting human-compatible scoring criteria, requiring documented review pathways, and ensuring that developmental environments for future judgment are not accidentally automated away.</p>
-      </section>
+            <p>That is the gap.</p>
 
-      <section id="section-6">
-        <h2>6. Measurement &amp; Accountability</h2>
-        <p>Human Value Governance requires evidence. Organizations need registers for human-presence contexts, decision classification, named accountable reviewers, appeal pathways, and AI systems that affect people. They also need records showing where human judgment was exercised, how context changed an outcome, and whether AI use is eroding trust, development, or judgment capacity over time.</p>
-        <p>Conformance can be assessed through documented review records, escalation pathways, context review processes, transparency notices, accountability chains, and longitudinal indicators such as override rates, employee trust, customer complaints, leadership pipeline diversity, and evidence that developmental roles still exist where future governance capacity depends on them.</p>
-      </section>
+            <p>We have data governance. We have model governance. What we do not have is a serious governance discipline for protecting the human qualities organizations depend on when AI systems are placed above people in real workflows. We do not have a framework for protecting empathy, moral judgment, trust, emotional presence, experiential wisdom, and critical thinking from being scored as inefficiency, inconsistency, bias, or noise.</p>
 
-      <section id="section-7">
-        <h2>7. Conclusion</h2>
-        <p>The central mistake of this AI moment is not only that organizations fear what models might get wrong. It is that many organizations still fail to ask what they themselves may stop seeing once the model becomes normal. Human Value Governance answers that omission by treating empathy, judgment, trust, wisdom, presence, and critical thinking as governed assets rather than ambient qualities that can survive any optimization pressure.</p>
-        <p>AI can extend human capability. It can synthesize information, reduce administrative burden, and help people see patterns faster. But where human beings are being judged, filtered, managed, or materially affected, augmentation must not become replacement. The organizations that govern this boundary well will not only reduce risk. They will protect the very human capacities that make institutions worth trusting in the first place.</p>
-      </section>
-    </article>
+            <p>And that absence is no longer theoretical.</p>
+
+            <p>This is already happening inside customer service organizations, hiring funnels, HR systems, performance management workflows, and frontline operations. AI systems are being used to evaluate calls, rank candidates, score communication style, flag deviations, and shape decisions that carry real human consequences. In many cases, these systems are not replacing repetitive work at the edge. They are being inserted into positions of supervision over human beings.</p>
+
+            <p>That is where the danger sharpens.</p>
+
+            <p>When an AI system is placed above a person, it does not just automate tasks. It starts defining what counts. It starts rewarding certain behaviors and penalizing others. It starts teaching the organization, often quietly, what the machine believes good judgment looks like.</p>
+
+            <p>And that is where institutions begin to lose something they may not even know they are trading away.</p>
+
+            <p>A customer service representative stays on a call longer because the customer is grieving, confused, or angry and needs a human being who will not rush them off the line. In a healthy company, that can be a mark of judgment, patience, and care. In a badly governed AI system, it becomes an exception to threshold. A variance. A performance flag.</p>
+
+            <p>A hiring manager once knew how to read a nonlinear career story with maturity. They knew that a caregiving gap, a late pivot, or an imperfect interview did not automatically indicate weakness. But once screening is delegated upstream to systems optimized for consistency and throughput, those human acts of interpretation begin to disappear. The system does not need to be malicious to do damage. It only needs to be narrow, overconfident, and institutionally unchallenged.</p>
+
+            <p>This is how erosion happens in modern enterprises. Not through dramatic failure first, but through quiet normalization.</p>
+
+            <p>The deeper problem is not simply that AI can be biased. That is true, but it is too small a frame. Organizations are deploying systems with no clear understanding of the human value those systems are compressing. They are measuring speed and consistency in domains where human trust was built through discretion, presence, and moral judgment. They are standardizing decisions in places where wisdom was always contextual. They are treating the most human parts of work as if they were defects in process design.</p>
+
+            <p>That is not modernization. That is institutional self-harm.</p>
+
+            <p>Many of the companies that built durable advantage did so because they trusted humans in value-sensitive moments. They allowed room for judgment. They treated care, discretion, and presence not as softness, but as a business asset. These were not sentimental choices. They were strategic ones. They created loyalty, trust, resilience, and brand identity that competitors could not easily copy.</p>
+
+            <p>Regulation is beginning to catch up. The EU AI Act identifies AI used in recruitment, worker management, task allocation, and performance evaluation as potentially high-risk in the employment and worker management context — triggering heightened controls, human oversight requirements, and documentation obligations for systems that fall within its scope. NIST's AI Risk Management Framework has become the default voluntary governance vocabulary for many U.S. enterprises. ISO/IEC 42001 establishes requirements for an AI management system built around organizational accountability. But every practitioner working inside these frameworks runs into the same unresolved gap: they govern systems. They do not yet protect people.</p>
+
+            <p>Now many enterprises are in danger of doing something reckless: using AI to optimize away the very human qualities that created differentiation in the first place.</p>
+
+            <p>This is why Human Value Governance™ has to exist as its own discipline.</p>
+
+            <p>It is not a branding exercise layered on top of existing responsible AI language. It names a concrete governance failure already visible in production environments. Data governance protects information flows. Model governance protects model behavior. Human Value Governance™ protects the human qualities an organization cannot afford to lose when AI is used to guide, score, filter, or constrain human action.</p>
+
+            <p>That means asking different questions than enterprises are used to asking.</p>
+
+            <p>Not only: <em>Is the model accurate?</em> But also: <em>Accurate against what definition of value?</em><br>
+            Not only: <em>Is the workflow efficient?</em> But also: <em>What human capability becomes impossible once this workflow is optimized?</em><br>
+            Not only: <em>Can the system make this decision?</em> But also: <em>Should this decision ever be made without human moral judgment present?</em></p>
+
+            <p>Those are governance questions. They are not philosophical extras. They are operational decisions with legal, cultural, economic, and human consequences.</p>
+
+            <p>The central mistake of this AI moment is that too many organizations believe the primary risk is what the model gets wrong. In practice, one of the greater risks is what the organization stops seeing once the model becomes normal. The missed candidate. The flattened service experience. The manager who no longer trusts their own judgment. The culture that becomes more rigid, less humane, and more machine-like in order to satisfy machine-readable definitions of performance.</p>
+
+            <p>That shift does not stay inside the tool. It reaches the institution itself.</p>
+
+            <p>So the question is no longer whether enterprises need AI governance. They do. The question is whether they are willing to govern the one thing they have been treating as ambient and inexhaustible: human value itself.</p>
+
+            <p>That is the work this paper takes up — naming the gap, defining the covenants, and building the operational framework that turns human value from an aspiration into a governed, evidenced, and auditable organizational commitment.</p>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 2
+               ───────────────────────────────────────── -->
+          <section id="section-2">
+            <h2>Section 2 — Why This Is Happening Now</h2>
+
+            <p>The erosion described in Section 1 did not happen because organizations consciously chose to abandon human values. It happened because several forces converged at the same time, and nobody built the governance layer strong enough to hold them in check.</p>
+
+            <h3>The first is deployment velocity.</h3>
+
+            <p>AI deployment has moved faster than governance thinking by a significant margin. The organizations moving fastest to adopt AI in hiring, customer service, performance evaluation, and workforce management were not moving fast because they had settled the question of what those systems were allowed to optimize for. They were moving fast because the technology was available, the cost reduction was real, and the competitive pressure was visible.</p>
+
+            <p>Governance does not move that way. Governance requires definition, deliberation, institutional memory, and the willingness to slow a decision down long enough to ask what is actually at stake. In the race between deployment velocity and governance discipline, deployment has been winning. The result is that AI-assisted decisions affecting real people are being made every day inside governance frameworks that were never designed to ask the right questions.</p>
+
+            <p>The gap is not a technology failure. It is a governance failure. And it is structural.</p>
+
+            <h3>The second is regulatory incompleteness.</h3>
+
+            <p>Regulators have identified where the risk is surfacing. The EU AI Act identifies employment and worker management as a domain where certain AI uses may qualify as high-risk, with corresponding obligations around risk management, documentation, and human oversight. NIST's AI Risk Management Framework provides a voluntary structure for governing AI risk. ISO/IEC 42001 establishes requirements for an AI management system built around accountability, lifecycle controls, and continual improvement.</p>
+
+            <p>But every practitioner working inside these frameworks eventually reaches the same unresolved edge. The frameworks tell organizations what categories of systems to govern. They do not tell organizations what human value they are obligated to protect. They require human oversight without defining what meaningful oversight looks like when a person's judgment has already been shaped by an AI score. They require accountability without forcing the question of who, exactly, is morally answerable at the moment a consequential decision is made.</p>
+
+            <p>That is not an indictment of those frameworks. They are necessary. They are substantial. They are overdue. But they do not close this gap.</p>
+
+            <h3>The third is frontier validation.</h3>
+
+            <p>At the frontier of AI capability, leading labs are already showing the same pattern: as model capability rises, governance cannot remain optional. The more powerful the system, the more obvious it becomes that capability alone is not a deployment standard. Human governance has to stand in front of release, not behind failure.</p>
+
+            <p>The organizations closest to the frontier already understand something the enterprise market is still resisting: when a system becomes capable enough to create outsized consequences, human governance is not a layer of polish. It is the condition for responsible use.</p>
+
+            <p>If that logic applies at the frontier, it applies with equal force inside the enterprise — to hiring funnels, customer service queues, worker evaluation systems, and every environment in which AI is shaping consequential judgments about human beings.</p>
+
+            <p>The frontier has already validated the need. The enterprise has not yet built the response.</p>
+
+            <h3>The fourth is cognitive erosion.</h3>
+
+            <p>There is a slower force underneath all of this that may matter just as much over time: organizations are beginning to use AI in ways that substitute for human reasoning rather than strengthen it.</p>
+
+            <p>Early-career professionals are outsourcing judgment before they have developed the judgment required to challenge what the system gives back. Managers are making faster decisions without building the interpretive maturity needed to evaluate whether the recommendation is wise, fair, or contextually sound.</p>
+
+            <p>Critical thinking is not a decorative skill. It is the operating capacity that governance depends on. When AI removes the developmental friction through which that capacity is built, it does not just save time. It can weaken the very faculty organizations will later need in order to supervise AI responsibly.</p>
+
+            <p>The organizations relying most heavily on AI-assisted decision-making today may be quietly producing the workforces least prepared to govern AI tomorrow.</p>
+
+            <p>These four forces — deployment velocity, regulatory incompleteness, frontier validation, and cognitive erosion — are why Human Value Governance must exist as its own discipline now. Not later. Not once the market settles. Now, while the patterns are still being set and the organizational habits are still being formed.</p>
+
+            <p>The window for building this governance layer before its absence becomes culturally embedded is closing.</p>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 3
+               ───────────────────────────────────────── -->
+          <section id="section-3">
+            <h2>Section 3 — What AI Was Built For</h2>
+
+            <p>There is a version of this story that starts with possibility.</p>
+
+            <p>When large language models arrived in mainstream enterprise environments, the people who had spent careers working with data — architects, engineers, technology leaders who understood how machine learning worked, how analytics stacked into broader AI capability — recognized the potential immediately. The capability was real. The accessibility was new. Something that had required deep specialization was suddenly available to anyone willing to engage with it in plain language.</p>
+
+            <p>The excitement was genuine. So was the instinct to govern.</p>
+
+            <p>Among the first questions practitioners asked were not about capability. They were about containment. What happens when people put sensitive data into a system they do not fully understand? Who is accountable for what comes out? How do you validate accuracy when the reasoning is opaque? How do you build controls around a black box when you cannot fully see inside it?</p>
+
+            <p>Those questions were governance questions. They were being asked by architects and engineers before anyone had built a framework to answer them. The instinct preceded the infrastructure.</p>
+
+            <p>And in the deployments that went well, the instinct held.</p>
+
+            <p>In markets where regulatory consequences for AI error were explicit — where the cost of a wrong output was assigned to a named accountable party — organizations did not simply accept AI output and move on. They placed humans in the loop. Not as a concession to doubt, but as a deliberate governance decision. A human reviewer whose role was to ensure the AI output was right before it reached its destination. A judgment layer between capability and consequence.</p>
+
+            <p>That model worked. It worked because the accountability chain was intact. The AI provided capability. The human provided judgment. The organization owned the outcome. Nobody in that workflow was confused about who was responsible for the result.</p>
+
+            <p>That is what AI was designed to enable. Not to replace human judgment. Not to automate accountability away. Not to make consequential decisions faster by removing the human who would have to answer for them.</p>
+
+            <p>The intention was augmentation. The design intent was to give human beings access to capabilities that made their judgment better informed, their work more effective, and their decisions more grounded in evidence. AI was built to extend human capacity — not to stand above it.</p>
+
+            <p>That intention is now being violated in production environments every day. Not by malice. Not by negligence in the engineering. But by the absence of a governance discipline that defines what human qualities must remain protected when AI is placed into roles of supervision, evaluation, and consequential judgment over people.</p>
+
+            <p>The question this paper takes up is simple but has not yet been answered with operational precision:</p>
+
+            <blockquote>What, exactly, must AI never be allowed to replace?</blockquote>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 4
+               ───────────────────────────────────────── -->
+          <section id="section-4">
+            <h2>Section 4 — What Human Value Governance Protects</h2>
+
+            <p>Governance requires definition. You cannot protect what you cannot name. You cannot audit what you cannot describe. And you cannot build a framework around concepts that exist only as sentiment.</p>
+
+            <p>This section defines the six human qualities that Human Value Governance exists to protect. Each one is defined not as a philosophical ideal but as an operational enterprise asset — with a description of what it looks like when functioning, what its erosion looks like in a production environment, and what evidence of that erosion would look like to a governance auditor.</p>
+
+            <h3>Empathy</h3>
+
+            <p><strong>Definition:</strong> Empathy is the organizational capacity to recognize the human context behind a transaction and respond to that context in a way that serves the person, not just the process.</p>
+
+            <p><strong>Enterprise function:</strong> Empathy is the judgment that sits between policy and outcome. It is what allows a customer service representative to recognize that a disputed charge is not a fraud investigation — it is a person asking to be believed. It is what allows a frontline employee to notice that a customer is not having a bad day — they are having a devastating one — and to respond with something the policy manual did not specify but the moment required.</p>
+
+            <p>In organizations that built durable customer loyalty, empathy was the decision capability that no competitor could copy at scale because it could not be standardized. It had to be present. When organizations treated empathy as a strategic asset rather than a soft skill, they created the kind of customer relationships that outlasted pricing cycles, product changes, and competitive pressure.</p>
+
+            <p>At a drive-through coffee company known for its culture of human connection, an employee noticed a customer in distress during what should have been a routine order. Without a system prompt, without a policy trigger, without a metric rewarding the behavior — the employee asked a question, listened to the answer, escalated to a manager with discretion, and responded with a gesture that cost almost nothing and meant everything. The story spread because it was recognizable as something rare: a commercial interaction that treated a human being as a human being.</p>
+
+            <p>That interaction cannot be replicated by an AI agent. Not because the agent lacks the words. Because the agent lacks the noticing — the capacity to read a human being who has not declared their distress in a form field, and the willingness to pause a transaction because a person matters more than its completion.</p>
+
+            <div class="paper-callout">
+              <h4>Failure Mode</h4>
+              <p>A customer contacts support with a bereavement and needs emergency travel assistance. The AI agent processes the request against available inventory and policy parameters. The policy does not include a bereavement exception pathway. The agent returns what the policy allows. The customer receives a correct answer to the wrong question. They needed someone to help them find a way. They received confirmation that no way existed. The ticket is closed. The metric shows resolution. The human experience shows abandonment.</p>
+            </div>
+
+            <div class="paper-callout paper-callout--teal">
+              <h4>Auditor Evidence of Erosion</h4>
+              <ul>
+                <li>Absence of exception pathways in AI agent workflows for high-distress human contexts</li>
+                <li>Performance evaluation criteria that penalize interaction duration without weighting human context or outcome quality</li>
+                <li>Customer feedback patterns showing high task completion scores alongside declining trust and relationship scores</li>
+                <li>No documented human escalation trigger for interactions where emotional distress signals are present</li>
+                <li>Rising customer escalation rates in AI-handled categories without corresponding improvement in resolution quality</li>
+              </ul>
+            </div>
+
+            <h3>Moral Judgment</h3>
+
+            <p><strong>Definition:</strong> Moral judgment is the capacity to make a principled decision in the absence of a complete policy — to weigh competing values, absorb genuine ambiguity, and choose a course of action that a reasonable, accountable human being could defend.</p>
+
+            <p><strong>Enterprise function:</strong> Moral judgment is required when the policy has not caught up to the situation. When the technology is ahead of the governance. When two legitimate organizational values are in direct tension and no system can resolve the conflict because the conflict is not technical — it is ethical.</p>
+
+            <p>In the early period of generative AI enterprise adoption, the real decisions were not technical. They were moral. Organizations had to weigh innovation against trust, legal exposure against competitive pressure, short-term efficiency against long-term reputation. A system could score risk against known parameters. A policy could enumerate guardrails for situations it had anticipated. But only people in the room could weigh ambition against responsibility and arrive at a decision that was principled rather than merely compliant.</p>
+
+            <p>When the people making those decisions are not empowered to exercise moral judgment, or when the workflow routes around it, the organization defaults to compliance as a substitute for ethics. The question shifts from <em>should we do this</em> to <em>does anything prohibit us from doing this.</em> That shift is subtle and dangerous.</p>
+
+            <div class="paper-callout">
+              <h4>Failure Mode</h4>
+              <p>An enterprise deploys an AI system to evaluate candidate communication style in hiring interviews, scoring on clarity, confidence, and articulateness. Legal review finds no applicable regulation prohibiting the practice. But the system systematically disadvantages candidates for whom English is a second language, candidates from cultures where directness in a formal interview context is not the norm, and candidates whose communication style reflects their background rather than their capability. Nobody asked whether the system <em>should</em> be doing this. They only asked whether it <em>could</em>. The harm accumulates silently until a pattern becomes visible — by which time thousands of hiring decisions have been shaped by criteria that no human with moral judgment would have endorsed.</p>
+            </div>
+
+            <div class="paper-callout paper-callout--teal">
+              <h4>Auditor Evidence of Erosion</h4>
+              <ul>
+                <li>Absence of documented human ethical review for AI use cases in consequential domains beyond legal compliance review</li>
+                <li>No named accountable person for decisions where policy is incomplete or silent</li>
+                <li>Escalation pathways that route to policy engines rather than to human judgment holders with ethical authority</li>
+                <li>Decision records that show compliance verification but no evidence of values-based deliberation</li>
+                <li>Organizations that can show what they approved but cannot explain why the values embedded in the system were the right ones</li>
+              </ul>
+            </div>
+
+            <h3>Trust</h3>
+
+            <p><strong>Definition:</strong> Trust is the accumulated evidence that an organization does what it says, knows the limits of what it knows, and does not ask people to move faster than its own integrity can support.</p>
+
+            <p><strong>Enterprise function:</strong> Trust is the invisible infrastructure of organizational performance. It is what allows a customer to hand over their financial life to a bank. It is what allows an employee to tell their manager the truth about a project that is failing. It is what allows a candidate to enter a hiring process believing they will be seen fairly.</p>
+
+            <p>Organizations earn trust by making their capabilities more dependable over time, being honest about their limitations before those limitations become visible through failure, and putting governance behind new capabilities before asking people to rely on them. In financial services, that discipline is the product. When AI systems begin shaping customer relationships — making decisions about eligibility, risk, and service — the trust that was built through human behavior is being spent through automated action. That spending is not always visible until it has accumulated into a deficit.</p>
+
+            <div class="paper-callout">
+              <h4>Failure Mode</h4>
+              <p>An organization deploys an AI system to handle customer service escalations in its financial products division. Over eighteen months, it produces a small but consistent pattern of incorrect adverse determinations in cases involving documentation submitted in non-standard formats. The error rate is low enough that no individual incident triggers review. The pattern only becomes visible when an external audit examines aggregate outcomes. By that point, the organization cannot reconstruct which decisions were affected, who was accountable for the deployment, or what human review existed. The damage is not primarily reputational. It is the discovery that the evidence trail required to demonstrate governance was never built.</p>
+            </div>
+
+            <div class="paper-callout paper-callout--teal">
+              <h4>Auditor Evidence of Erosion</h4>
+              <ul>
+                <li>Rising rates of human override of AI recommendations without documented rationale — a signal that humans have stopped trusting the system but have not been given a formal mechanism to say so</li>
+                <li>Increasing time-to-decision in AI-assisted workflows as people add informal review steps</li>
+                <li>Customer complaint patterns citing unexpected or unexplained outcomes in AI-handled interactions</li>
+                <li>Employee feedback citing loss of confidence in evaluation, promotion, or performance processes</li>
+                <li>Gap between governance documents describing human oversight and operational records showing no evidence of it</li>
+              </ul>
+            </div>
+
+            <h3>Experiential Wisdom</h3>
+
+            <p><strong>Definition:</strong> Experiential wisdom is knowledge that cannot be transferred through documentation, training, or system design — what a person carries after years of consequential decisions, built through having been wrong, having recovered, and having learned something that changed how they approached the next situation.</p>
+
+            <p><strong>Enterprise function:</strong> Experiential wisdom is the compounding asset of a career. The most trusted advisors in any organization are not the ones with the most knowledge. They are the ones who have seen enough, failed enough, and recovered enough to know what actually matters when the situation is genuinely hard. That calibration — which comes only from having carried real consequences for real decisions over time — cannot be compressed into a training dataset. It cannot be inherited by a system that processes information but has never had to live with the outcome.</p>
+
+            <p>When organizations use AI to replace the roles and relationships through which experiential wisdom is built and transmitted, they are not simply automating a task. They are removing the developmental infrastructure through which the next generation of leaders acquires the judgment their roles will eventually require.</p>
+
+            <div class="paper-callout">
+              <h4>Failure Mode</h4>
+              <p>A technology company uses an AI talent platform to screen and rank candidates for senior engineering and leadership roles, trained on the profiles of historically successful hires. Over three years, the leaders advancing through the AI-assisted pipeline are technically strong and culturally homogeneous. The non-linear career. The leader who moved between industries. The person whose most important formative experience was navigating an organization in crisis rather than one in growth. These profiles score poorly. They are filtered out before a human with enough context to recognize what they are looking at ever sees their file. The organization gets faster at hiring. It does not get wiser about who to hire.</p>
+            </div>
+
+            <div class="paper-callout paper-callout--teal">
+              <h4>Auditor Evidence of Erosion</h4>
+              <ul>
+                <li>Hiring and promotion criteria that can only be explained in terms of scores and pattern match, not judgment, context, or organizational need</li>
+                <li>Absence of documented human review for non-linear or non-standard profiles before adverse determinations</li>
+                <li>Declining diversity of background, experience type, and career trajectory in leadership pipelines over time</li>
+                <li>Loss of institutional knowledge following periods of AI-assisted workforce decisions</li>
+                <li>Organizations making faster decisions about talent and observably worse ones</li>
+              </ul>
+            </div>
+
+            <h3>Emotional Presence</h3>
+
+            <p><strong>Definition:</strong> Emotional presence is the capacity to be genuinely in a situation with another human being — to make contact, register what is happening, and respond in a way that the other person experiences as real.</p>
+
+            <p><strong>Enterprise function:</strong> Emotional presence is observable and its effects are measurable. The leader who walks into a room and changes its quality without announcing they are doing so. Who makes eye contact with the person who has something difficult to say. Who remembers a name, acknowledges a specific circumstance, and communicates: I see you. You are not interchangeable. This moment matters.</p>
+
+            <p>Emotional presence also carries a specific governance function that is easy to overlook: it is the quality that makes human oversight real rather than nominal. A manager who is genuinely present in a conversation about an AI-assisted performance score can notice when something is wrong that the score did not capture. That capacity to notice is what separates meaningful oversight from the appearance of oversight.</p>
+
+            <div class="paper-callout">
+              <h4>Failure Mode</h4>
+              <p>A financial services firm replaces its employee performance review conversations with an AI-assisted platform. The process is consistent, efficient, and well-documented. Over two years, voluntary turnover among high-performing employees increases. Exit interview data shows a consistent theme: employees feel their managers no longer know them. Conversations that used to feel like development now feel like compliance. The performance data is accurate. The documentation is thorough. But the interaction communicates something the data does not capture: this organization no longer considers your specific human situation worth a human being's full attention. The firm has not reduced the number of performance conversations. It has reduced the emotional presence in them.</p>
+            </div>
+
+            <div class="paper-callout paper-callout--teal">
+              <h4>Auditor Evidence of Erosion</h4>
+              <ul>
+                <li>Increasing use of AI-mediated interactions in contexts previously handled through unstructured human conversation</li>
+                <li>Declining scores on employee connection and psychological safety metrics alongside stable efficiency metrics</li>
+                <li>Exit interview data citing feeling processed, unseen, or managed rather than developed</li>
+                <li>Absence of governance documentation specifying which contexts require unmediated human presence</li>
+                <li>Manager feedback indicating reduced confidence in conducting difficult conversations without AI assistance</li>
+              </ul>
+            </div>
+
+            <h3>Critical Thinking</h3>
+
+            <p><strong>Definition:</strong> Critical thinking is the capacity to reason through uncertainty, evaluate incomplete evidence, weigh competing interpretations, and arrive at a judgment that the thinker can defend — and revise when confronted with better evidence.</p>
+
+            <p><strong>Enterprise function:</strong> Critical thinking is the operating capacity that governance depends on. Every meaningful governance decision — including the decision to deploy an AI system, to trust its output, to override it, to escalate to human review, or to challenge a policy producing wrong outcomes — requires a person who can reason independently of what the system suggests. Without that capacity, human oversight becomes a formality. The person in the loop is present but not reasoning.</p>
+
+            <p>This capacity is not innate. It develops through difficulty, ambiguity, and the friction of having to defend a position to someone who will push back. It does not develop through exposure to correct answers.</p>
+
+            <div class="paper-callout">
+              <h4>Failure Mode</h4>
+              <p>An organization deploys AI agents in entry-level analyst roles that previously required recent graduates to develop data interpretation and judgment skills over their first two years. Three years later, the internal pipeline for senior analyst roles is thin. The people available for promotion have three years of experience reviewing and formatting AI outputs rather than reasoning through ambiguous problems. They know how to work with AI. They do not have the developed judgment to override it, challenge it, or govern it. The organization has not suffered a visible AI failure. It has suffered the invisible failure of having replaced the developmental environment through which its own future senior talent was supposed to be built.</p>
+            </div>
+
+            <div class="paper-callout paper-callout--teal">
+              <h4>Auditor Evidence of Erosion</h4>
+              <ul>
+                <li>Increasing proportion of entry-level roles replaced by AI agents without a documented assessment of developmental impact and replacement</li>
+                <li>Absence of structured human mentorship and developmental friction in AI-augmented workflows</li>
+                <li>Rising rates of AI output acceptance by human reviewers without documented rationale</li>
+                <li>Declining capacity in governance roles to articulate AI failure modes or challenge system outputs</li>
+                <li>Organizations that can operate their AI systems competently but cannot explain the reasoning behind the outputs those systems produce</li>
+              </ul>
+            </div>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 5
+               ───────────────────────────────────────── -->
+          <section id="section-5">
+            <h2>Section 5 — The Critical Thinking Crisis</h2>
+
+            <p>The junior role was never just about the work.</p>
+
+            <p>When an organization hired an intern, a graduate, or a junior analyst, they were not simply acquiring labor at a lower cost. They were making an investment in a developmental environment — a place where a person could ask a question that revealed their ignorance without consequences, receive feedback from someone with enough patience to give it honestly, make a mistake with stakes low enough to survive, and begin the long process of building judgment through difficulty.</p>
+
+            <p>That environment is disappearing.</p>
+
+            <p>Organizations are now deploying AI agents in roles that were previously filled by people at the beginning of their careers. The efficiency case is straightforward. The governance case against it has not yet been made with sufficient force.</p>
+
+            <p>Here it is.</p>
+
+            <p>The junior role was the entry point into experiential wisdom. It was where the pipeline began. You cannot have senior leaders with deep judgment in fifteen years if you do not give people the developmental experiences in which judgment is formed. You cannot have governance practitioners capable of overseeing AI in 2040 if you eliminate the roles in which governance thinking is first learned in 2026.</p>
+
+            <p>The pipeline is being cut at the source. And the organizations cutting it will not feel the consequence until it is too late to reverse it.</p>
+
+            <p>The second thing disappearing is harder to name but easier to feel.</p>
+
+            <p>The best mentors did not primarily offer information. They offered something AI cannot generate and organizations are not measuring: human presence in the developmental moment. A handshake. A conversation that wandered off the agenda because the person needed to talk. The patience to sit with someone who was struggling without rushing them to the answer. The permission, communicated not through words but through behavior, that imperfection was not only acceptable — it was the beginning of something.</p>
+
+            <p>That is not sentiment. That is the actual mechanism by which human beings develop judgment.</p>
+
+            <p>Critical thinking does not form in clean, efficient, correct environments. It forms in difficult ones. In the discomfort of not knowing. In the friction of being challenged by someone who cares enough to push back. In the experience of being wrong and having to figure out why.</p>
+
+            <p>AI is optimized for correctness. That is not a flaw. It is the design. But correctness is not the developmental condition. Difficulty is. Ambiguity is. The experience of being uncertain and having to reason your way through it — that is what builds the capacity that governance will later require.</p>
+
+            <p>When organizations replace developmental human environments with AI systems optimized for correct output, they do not simply change the tool. They remove the condition under which critical thinking forms.</p>
+
+            <p>Every governance framework — including this one — depends on human beings who can reason under uncertainty, evaluate evidence that is incomplete, weigh competing values without a formula to resolve the tension, and make principled decisions that they can defend to other humans.</p>
+
+            <p>If organizations are simultaneously deploying AI in roles that required those capacities and eliminating the developmental environments in which those capacities were built, they are creating a compounding problem that no governance framework can solve after the fact.</p>
+
+            <p>You cannot audit for judgment that was never developed. You cannot require human oversight from a workforce that was never given the experiences that make oversight meaningful.</p>
+
+            <p>The critical thinking crisis is not primarily an education problem. It is a governance dependency problem. And it arrives not with a single visible failure but with the slow discovery that the people responsible for governing AI do not have the judgment the job requires — because the system that was supposed to develop that judgment was replaced before it had the chance.</p>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 6
+               ───────────────────────────────────────── -->
+          <section id="section-6">
+            <h2>Section 6 — When AI Should and Should Not Be Used</h2>
+
+            <p>This paper is not an argument against AI.</p>
+
+            <p>It could not be. It was partly built with AI assistance — ideas developed through conversation, architecture synthesized across complex domains, expression refined across a language barrier. The thinking in this paper is human. The speed and clarity with which it could be expressed was made possible by AI working as it was designed to work: augmenting human capability without replacing human judgment.</p>
+
+            <p>That distinction — between augmentation and replacement — is the entire governance question.</p>
+
+            <h3>When AI should be used</h3>
+
+            <p>In medical triage, AI can flag anomalies in scans and patient data that a clinician might take longer to identify or miss entirely under the pressure of a full caseload. The machine helps the doctor see faster. The doctor still decides what the finding means, what the patient needs, and what happens next. The accountability stays where it belongs.</p>
+
+            <ul class="paper-use-list">
+              <li>AI should be used to synthesize large volumes of information so that humans can focus their attention on the decisions that require judgment rather than the retrieval that merely precedes it.</li>
+              <li>To identify patterns at a scale no human team could process.</li>
+              <li>To reduce administrative burden so the people doing meaningful work have more time to do it.</li>
+              <li>To make expertise more accessible.</li>
+            </ul>
+
+            <p>In each of these cases, AI extends human capability. The human remains in the loop for the decisions that carry consequence. The accountability chain is intact. That is augmentation.</p>
+
+            <h3>When AI should not be used</h3>
+
+            <ul class="paper-use-list">
+              <li>AI should not be used to make irreversible decisions about human beings without a human reviewing that decision. Because the person whose life is affected is entitled to have a human being accountable for the outcome.</li>
+              <li>AI should not be used to evaluate human emotional expression as a performance metric. When organizations use AI to score authenticity, warmth, enthusiasm, or passion, they are not measuring a quality. They are penalizing the variability that makes those qualities human.</li>
+              <li>AI should not be used to replace the developmental environments in which human judgment is formed. The junior role. The mentorship conversation. The difficult project where a person had to figure something out without being given the answer. These are not inefficiencies to be automated. They are the pipeline through which the next generation of governance professionals is built.</li>
+              <li>AI should not be used to create accountability gaps in which a consequential decision was made and no human being is responsible for it.</li>
+            </ul>
+
+            <div class="paper-governance-test">
+              <h4>The Governance Test</h4>
+              <p>When this AI system produces an output that affects a human being, is there a person who reviewed it, who understood it, who had the authority to change it, and who will answer for it if it was wrong?</p>
+              <p><span class="test-answer">If yes — that is augmentation.</span></p>
+              <p><span class="test-answer" style="color: var(--clr-navy);">If no — that is replacement. And that is where Human Value Governance begins.</span></p>
+            </div>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 7
+               ───────────────────────────────────────── -->
+          <section id="section-7">
+            <h2>Section 7 — The Governance Gap: What Existing Frameworks Cover and What They Leave Unresolved</h2>
+
+            <p>Human Value Governance does not begin with the claim that existing frameworks are insufficient because they are weak. It begins with the opposite claim: the major governance frameworks now shaping enterprise AI deployment are necessary, serious, and increasingly consequential. The problem is not that they fail to govern. The problem is that they govern specific layers of the AI stack while leaving one critical layer unresolved — the human qualities an organization is obligated to preserve when AI is used to evaluate, guide, or constrain human beings.</p>
+
+            <p><strong>The EU AI Act</strong> identifies certain AI uses in employment and worker management as potentially high-risk and requires formal controls including risk management, documentation, and human oversight. But it does not tell organizations what human value those systems must preserve. It governs legality and risk exposure. It does not yet govern human value loss.</p>
+
+            <p><strong>NIST AI RMF</strong> provides a voluntary structure for managing AI risk through Govern, Map, Measure, and Manage. It does not define what empathy, moral judgment, emotional presence, experiential wisdom, trust, or critical thinking mean as protected enterprise assets. NIST gives enterprises a disciplined process. It does not yet give them the protected asset model Human Value Governance requires.</p>
+
+            <p><strong>ISO/IEC 42001</strong> establishes requirements for an AI management system — formal policy, defined roles, documented processes, accountability, and continual improvement. But a management system depends on what it is designed to manage. ISO/IEC 42001 does not specify the human qualities that must be preserved when AI is introduced into human-facing workflows. It helps organizations build the machine of governance. Human Value Governance defines what that machine must protect.</p>
+
+            <p><strong>CDMC</strong> governs cloud data management with auditable controls and evidence requirements. In 2021, the EDM Council and over 100 of the world's largest financial institutions established in the CDMC Framework that ethical data outcomes must protect human dignity. That principle was right. Human Value Governance extends it from the data layer to the AI agent layer — where the risk to human dignity is no longer theoretical.</p>
+
+            <p>Across all four frameworks, the unresolved space is consistent. They do not define empathy, moral judgment, trust, experiential wisdom, emotional presence, or critical thinking as protected enterprise assets. They do not tell organizations what human capabilities must remain non-substitutable in a workflow, or what evidence would show those capabilities are being systemically eroded.</p>
+
+            <p>They govern systems. They do not yet protect people.</p>
+
+            <p>Human Value Governance is the interpretive and operational layer that makes them more complete in human-facing enterprise deployment.</p>
+
+            <p>Where the EU AI Act classifies risk, Human Value Governance defines the human values at stake inside that risk class. Where NIST structures risk management, Human Value Governance defines the protected assets. Where ISO/IEC 42001 builds the management system, Human Value Governance supplies the human-value content. Where CDMC governs data, Human Value Governance extends auditable governance into the domain of human consequence.</p>
+
+            <p>Not because the current frameworks are wrong. Because they stop one layer too soon.</p>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 8
+               ───────────────────────────────────────── -->
+          <section id="section-8">
+            <h2>Section 8 — The Human Value Covenants</h2>
+
+            <p>A policy can be amended. A guideline can be ignored. A rule can be gamed.</p>
+
+            <p>A covenant is different. A covenant is a binding moral commitment between parties that acknowledges the humanity of both sides. It is what an organization declares before it deploys — not what it discovers it should have declared after something goes wrong.</p>
+
+            <p>The seven Human Value Covenants are the operational heart of this framework. They translate the protected assets defined in Section 4 into explicit organizational commitments with scope, requirements, and conformance evidence. They are governance obligations — specific enough to audit, serious enough to matter, and grounded in the reality of how AI is being deployed in enterprise environments today.</p>
+
+            <!-- Covenant 1 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 1 — The Covenant of Presence</h3>
+              <p class="paper-covenant-commitment">We commit that AI will never replace the human obligation to be present with another human in moments that matter.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Any AI system evaluating, supervising, scoring, or managing human interactions where emotional presence, empathy, or relational quality are material to the outcome — including customer service, patient care, employee support, crisis response, and conflict resolution.</p>
+              <p>Organizations shall identify and document all interaction contexts in which human presence is material to outcome quality. They shall maintain a Human Presence Register — a documented list of interaction types for which AI evaluation metrics shall not penalize extended duration, emotional engagement, or deviation from efficiency benchmarks when that deviation serves the human being in the interaction.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: a current Human Presence Register signed by an accountable human leader; documentation of AI evaluation criteria showing human value weighting factors; evidence that affected employees have been informed of their protection; documented human escalation pathways for interactions where emotional distress signals are present.</p>
+              </div>
+            </div>
+
+            <!-- Covenant 2 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 2 — The Covenant of Judgment</h3>
+              <p class="paper-covenant-commitment">We commit that AI will never make an irreversible decision about a human being without human judgment reviewing that decision.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Any AI system making consequential, life-altering, or irreversible decisions affecting individuals — including hiring, termination and discipline, performance evaluation affecting compensation or advancement, credit and lending, and healthcare triage.</p>
+              <p>Organizations shall map every AI decision point that affects a human being and classify each as reversible or irreversible. For all irreversible decisions, a named human being with documented authority shall review the AI output before the decision is finalized. That review shall be documented as a record of what was reviewed, by whom, and what judgment was applied — not as a checkbox.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: a documented decision classification register; named human reviewers with documented authority; review records showing what was examined, by whom, and what judgment was applied; evidence that affected individuals can request human review.</p>
+              </div>
+            </div>
+
+            <!-- Covenant 3 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 3 — The Covenant of Dignity</h3>
+              <p class="paper-covenant-commitment">We commit that AI will never reduce a human being to a score, a metric, or a data point without context, nuance, and the possibility of being understood as a whole person.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Any AI system that evaluates, ranks, scores, or makes recommendations about individual human beings — including hiring and talent systems, performance management, customer scoring, and credit and risk assessment.</p>
+              <p>Organizations shall ensure that no AI scoring system produces a final determination about a human being without a documented context layer through which human judgment about individual circumstances can be applied. They shall establish and maintain appeal and review pathways capable of producing a different outcome.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: documented context review processes for all AI scoring systems; evidence that appeal and review pathways exist, are communicated to affected individuals, and are capable of producing different outcomes; records of context reviews and appeal outcomes.</p>
+              </div>
+            </div>
+
+            <!-- Covenant 4 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 4 — The Covenant of Growth</h3>
+              <p class="paper-covenant-commitment">We commit that we will not hold humans to a standard of consistency that we do not also demand of the AI systems evaluating them.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Any AI system that evaluates human performance, behavior, or output against consistency standards — including performance management systems, quality assurance platforms, and hiring evaluation tools.</p>
+              <p>Organizations shall document the consistency standards applied to human performance evaluations and assess whether those standards account for contextual variability, developmental growth, and the exercise of judgment in novel situations. Organizations shall not penalize human performance variability that can be explained by context, judgment, or growth without first assessing whether the AI system applying that standard demonstrates equivalent consistency in its own outputs.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: documented performance evaluation criteria with explicit treatment of contextual variability; evidence that AI systems used to evaluate human consistency are themselves subject to consistency audits; records of cases in which human performance variability was reviewed in context rather than flagged automatically.</p>
+              </div>
+            </div>
+
+            <!-- Covenant 5 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 5 — The Covenant of Transparency</h3>
+              <p class="paper-covenant-commitment">We commit that every human affected by an AI decision has the right to know that AI was involved, what criteria it used, and how to seek human review.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Any AI system that materially shapes a decision, recommendation, or action affecting an individual human being — regardless of whether a human being also participated in the process.</p>
+              <p>Organizations shall disclose AI involvement in all consequential decisions affecting individuals. They shall provide accessible explanations of the criteria used — in language the affected person can understand. They shall establish clear pathways through which any affected individual can request human review — staffed, timely, and capable of producing a different outcome.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: documented disclosure policies; evidence that disclosures are being made in hiring communications, performance review documentation, and customer correspondence; documented human review pathways with evidence of staffing, response times, and outcome records.</p>
+              </div>
+            </div>
+
+            <!-- Covenant 6 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 6 — The Covenant of Wisdom</h3>
+              <p class="paper-covenant-commitment">We commit that experiential wisdom — knowledge that comes only from living, failing, recovering, and growing — will always be valued above pattern recognition in decisions about human potential.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Any AI system used to assess, rank, select, promote, or evaluate human beings based on their history, trajectory, or potential — including hiring and talent acquisition, promotion and succession, and performance evaluation platforms.</p>
+              <p>Organizations shall explicitly value experiential wisdom in their hiring, evaluation, and promotion criteria. They shall document how non-linear career paths, unconventional backgrounds, and context-dependent performance records are accounted for. Organizations shall require human review for any candidate or employee whose profile is flagged as non-standard by AI systems before any adverse determination is made. Pattern match can inform. It shall not determine.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: documented criteria for how experiential wisdom and non-linear backgrounds are weighted; evidence of human review for non-standard profiles; records of outcomes for candidates reviewed by humans after AI flagging; diversity and trajectory data in leadership pipelines over time.</p>
+              </div>
+            </div>
+
+            <!-- Covenant 7 -->
+            <div class="paper-covenant-entry">
+              <h3>Covenant 7 — The Covenant of Accountability</h3>
+              <p class="paper-covenant-commitment">We commit that when AI causes harm to a human being, a human being is accountable for that harm — not the algorithm, not the vendor, not the system.</p>
+              <p class="paper-covenant-scope"><strong>Scope:</strong> Every AI deployment in every domain. This is the foundational covenant — the one that gives all others their force. Without accountability, governance is theater. With it, governance is real.</p>
+              <p>Organizations shall name a human being accountable for every AI system that affects people. Not a team. Not a function. A named person with documented authority and documented responsibility for the system's outcomes. Organizations shall establish clear accountability chains that can be reconstructed and reviewed when something goes wrong. Diffuse accountability is no accountability.</p>
+              <div class="paper-callout paper-callout--teal">
+                <h4>Conformance Evidence</h4>
+                <p>Conformance is demonstrated by: a documented accountability register naming the human responsible for each AI system, updated when systems are deployed, modified, or decommissioned; documented accountability chains from deployment decision to human consequence; evidence of accountability being exercised when AI systems produce harmful outcomes.</p>
+              </div>
+            </div>
+
+            <p>These seven covenants are not independent. They form a system.</p>
+
+            <p>Presence ensures the human is there in the moment that matters. Judgment ensures a human reviews the decision that cannot be undone. Dignity ensures the person is never reduced to what the system can see. Growth ensures the human is not penalized for being human. Transparency ensures the person knows what happened and has somewhere to go. Wisdom ensures the qualities that cannot be measured are not systematically excluded. Accountability ensures that someone answers for all of it.</p>
+
+            <p>An organization that adopts all seven is not simply complying with a framework. It is declaring what kind of organization it chooses to be — and accepting the obligation to prove it.</p>
+
+            <blockquote>A covenant without evidence is a statement of intent. With evidence, it is a governance commitment. That is the distinction Human Value Governance is built to maintain.</blockquote>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 9
+               ───────────────────────────────────────── -->
+          <section id="section-9">
+            <h2>Section 9 — What Five Years Without This Framework Looks Like</h2>
+
+            <p>This section does not speculate. Every consequence described below is the linear extension of patterns already visible in enterprise environments in 2026.</p>
+
+            <h3>Inside the enterprise</h3>
+
+            <p>The first five years of ungoverned AI deployment do not produce a crisis. They produce a drift. Organizations will experience a slow divergence between what their governance documents say and what their systems actually do. Their policies will describe human oversight. Their workflows will have automated past it. The gap will widen quietly, year by year, until an external event — a regulatory audit, a high-profile lawsuit, a pattern of discrimination discovered by a journalist — makes the gap visible.</p>
+
+            <p>By that point, the harm will have been distributed across thousands of decisions that nobody reviewed, thousands of candidates who were never seen, thousands of customer interactions that resolved correctly and humanly incorrectly. The audit trail will show compliance. The human cost will show something else.</p>
+
+            <p>The second enterprise consequence is less visible but equally consequential: the gradual erosion of the organizational judgment that makes self-correction possible. Managers who stopped exercising judgment because the system exercised it for them will not recover that capacity quickly when the system is wrong. The capacity to recognize when an AI output should be questioned is built through practice. When organizations remove that practice, they remove the early warning system that human judgment provides.</p>
+
+            <h3>Inside the labor market</h3>
+
+            <p>The labor market consequence is not primarily about job losses in absolute terms. It is about the systematic removal of the developmental roles through which people enter the economy, build capability, and earn the right to take on more consequential work.</p>
+
+            <p>Five years from now, organizations will face a shortage not of workers but of workers who are ready. The people who would have spent 2026 through 2030 building judgment in junior roles will instead have spent those years adjacent to AI systems that did the work they should have been learning to do. They will be available. They will not be prepared.</p>
+
+            <p>The organizations that kept developmental roles, maintained human mentorship, and preserved the entry points through which judgment is built will have a talent advantage that cannot be bought or quickly replicated.</p>
+
+            <h3>Inside the leadership pipeline</h3>
+
+            <p>Organizations using AI to accelerate early-career selection are systematically reducing the diversity of experience in their leadership pipelines. The non-linear career. The person who recovered from failure. The candidate whose judgment was forged in an environment the model has never seen. These profiles are being filtered out in 2026 at a rate that will hollow leadership pipelines by 2031.</p>
+
+            <p>The organizations that have replaced the conditions under which critical thinking develops will find that the leaders emerging from that system are technically capable and judgmentally thin. They can operate AI. They are less equipped to govern it.</p>
+
+            <p>The people who will be responsible for overseeing AI in 2031 are being shaped right now by the decisions organizations are making in 2026.</p>
+
+            <h3>Inside institutional trust</h3>
+
+            <p>The trust consequence arrives in waves.</p>
+
+            <p>The first wave is individual. A candidate who discovers they were screened out by an algorithm and never seen by a human being does not simply move on. They tell the story. They carry the experience of having been processed rather than considered.</p>
+
+            <p>The second wave is reputational. Organizations that cannot produce evidence of Human Value Governance will be unable to demonstrate that they tried. The absence of evidence is not neutral. In a governance context, the absence of evidence is evidence of absence.</p>
+
+            <p>The third wave is institutional. Regulators, boards, and investors are beginning to ask governance questions that organizations are not yet equipped to answer. Organizations that have not built the evidence trail will face a compliance reckoning for which they are structurally unprepared.</p>
+
+            <p>Trust, once spent at institutional scale, does not recover on a disclosure and a new policy.</p>
+
+            <h3>Inside intergenerational opportunity</h3>
+
+            <p>The intergenerational consequence is the one that cannot be fully undone once it has compounded long enough.</p>
+
+            <p>The people who are between eighteen and twenty-eight years old in 2026 are entering a labor market being reshaped faster than any previous generation has experienced. The roles through which previous generations built capability, earned economic stability, and developed the judgment required for more consequential work are being removed at the same time they are most needed.</p>
+
+            <p>The organizations making those deployment decisions are thinking about the quarter. The consequence is the decade.</p>
+
+            <p>Five years of ungoverned AI deployment will produce a generation with a different relationship to work — more precarious, less developmental, more dependent on AI tools they have never been taught to question, and less equipped to exercise the independent judgment that meaningful work has always required.</p>
+
+            <p>That is the consequence that lands last and costs most.</p>
+
+            <blockquote>The question Human Value Governance asks is not only: what are we protecting today? It is: what are we leaving behind?</blockquote>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 10
+               ───────────────────────────────────────── -->
+          <section id="section-10">
+            <h2>Section 10 — What Organizations Must Do</h2>
+
+            <p>This section does not offer principles. What follows are operating moves — specific actions for specific people, sequenced by what must happen first.</p>
+
+            <div class="paper-action-group">
+              <h3>Boards</h3>
+              <p>Add human value governance to the AI oversight agenda as a governance matter with the same standing as financial controls and risk management. Require management to name the human being accountable for each consequential AI deployment affecting employees, customers, and candidates. Include human value governance in the criteria used to evaluate the CEO and the executive team.</p>
+            </div>
+
+            <div class="paper-action-group">
+              <h3>CIOs and CTOs</h3>
+              <p>Establish a mandatory pre-deployment human value assessment for any AI system that will affect employees, candidates, or customers in consequential ways — asking what human value the system affects, what it is allowed to optimize for, what it is prohibited from replacing, and who is the named human accountable for its outcomes. No system moves to production without documented answers.</p>
+              <p>Build human escalation pathways into the architecture before deployment, not after complaints surface. Every AI system that makes or shapes consequential decisions about people must have a documented escalation path to a human with the authority to decide differently.</p>
+              <p>Audit the gap between declared governance and operational reality at least annually. For each consequential AI system: is there evidence that a human reviewed the outputs, exercised judgment, and was accountable for the result? Where the evidence does not exist, the gap is the governance failure.</p>
+            </div>
+
+            <div class="paper-action-group">
+              <h3>CHROs</h3>
+              <p>Audit every AI system currently operating in talent acquisition, performance management, and workforce decisions against the seven covenants. Is there a human reviewing adverse hiring decisions before they are finalized? Is there a context layer in performance evaluation that allows human judgment to be applied before scores produce outcomes? Are there documented appeal pathways that affected employees and candidates can actually use?</p>
+              <p>Protect developmental roles from AI displacement without a documented impact assessment covering what developmental value that role provided, whether equivalent infrastructure exists or will be created, and who is accountable for the long-term pipeline consequence.</p>
+              <p>Establish and enforce human review requirements for non-standard profiles. Every candidate or employee whose profile is flagged as non-standard, non-linear, or below threshold must receive human review before any adverse determination is finalized.</p>
+            </div>
+
+            <div class="paper-action-group">
+              <h3>Governance Teams</h3>
+              <p>Build a Human Value Governance register — a living document mapping every consequential AI deployment to the covenants it implicates, the human being accountable for it, the conformance evidence required, and the current evidence status.</p>
+              <p>Establish a quarterly covenant conformance review examining evidence for each deployment against each applicable covenant. Either the documentation exists or it does not.</p>
+              <p>Establish a human value incident protocol — a defined process for investigating, remediating, and learning from cases in which an AI system produced an outcome that violated a covenant.</p>
+            </div>
+
+            <div class="paper-action-group">
+              <h3>Product and Engineering Leaders</h3>
+              <p>This week: add the governance test to every active product specification affecting human beings in consequential ways. The test is one question: when this system produces an output that affects a human being, is there a named person who can review it, change it, and answer for it? If the answer is not yes by design, the specification is incomplete.</p>
+              <p>Build human override capability into every system that makes or shapes consequential individual decisions — before launch, not as a future enhancement.</p>
+              <p>Treat human escalation pathways as first-class product features, not support infrastructure. Stop accepting ambiguity about who the named accountable human is for each consequential system before it ships.</p>
+            </div>
+
+            <h3>The sequence</h3>
+
+            <p>The board mandate creates the permission and the expectation. The executive operating moves create the infrastructure and the accountability. The governance team creates the evidence and the review discipline. The product and engineering moves create the systems that can actually be governed.</p>
+
+            <p>The organizations that will be well-governed in 2031 are the ones that start all four moves in 2026 — in parallel, each layer reinforcing the others.</p>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               SECTION 11
+               ───────────────────────────────────────── -->
+          <section id="section-11">
+            <h2>Section 11 — The Path to Standards</h2>
+
+            <p>Human Value Governance is a framework in search of an institutional home. This section describes how it finds one — not by competing with existing standards bodies but by filling the gap they have consistently identified and not yet filled.</p>
+
+            <h3>Where it fits</h3>
+
+            <p>The relationship with existing frameworks is additive, not competitive.</p>
+
+            <p>The EU AI Act requires human oversight in high-risk deployments but does not define the human values that oversight is meant to protect. Human Value Governance supplies that definition — the practical implementation layer for the Act's human oversight requirements.</p>
+
+            <p>NIST AI RMF provides a voluntary vocabulary and process for AI risk governance. Human Value Governance maps directly onto the Govern function — providing the protected asset model and covenant structure organizations need to operationalize NIST's trustworthiness requirements in practice.</p>
+
+            <p>ISO/IEC 42001 builds the management system for AI governance. Human Value Governance supplies the human-value content that system must protect — defining what it must govern, what evidence it must produce, and what conformance looks like when the deployment affects human beings.</p>
+
+            <p>CDMC established that ethical data outcomes must protect human dignity. Human Value Governance extends that principle from the data layer to the AI agent layer.</p>
+
+            <h3>The institutional path</h3>
+
+            <p><strong>Step 1:</strong> Translate this white paper into a formal framework document following standards submission conventions — normative requirements using <em>shall</em> language, defined conformance evidence, scope boundaries, and a clear relationship to existing standards.</p>
+
+            <p><strong>Step 2:</strong> Establish institutional validation from a small number of credible validators before standards body submission. The MIT AI Risk Initiative and the Georgetown Center for Security and Emerging Technology are natural early targets, given their published research that independently validates the gap this framework fills.</p>
+
+            <p><strong>Step 3:</strong> Pursue three entry points in parallel. The IEEE Standards Association P7000 series covers ethically aligned design and transparency — Human Value Governance aligns with this working group's scope. The EDM Council, publisher of CDMC, is the most direct path from an existing institutional relationship to a credible standards conversation. ISO/IEC JTC 1/SC 42 — responsible for ISO/IEC 42001 — is the longest path but the one with broadest international reach.</p>
+
+            <p><strong>Step 4:</strong> Build the certification ecosystem following the CDMC model — a framework document, a controls test specification, an assessment methodology, and an authorized partner program. The founding consortium model distributes development cost and provides the cross-industry legitimacy no single organization can provide alone.</p>
+
+            <p><strong>Step 5:</strong> Produce a formal EU AI Act alignment mapping — for each relevant article, a clear statement of how the corresponding covenant and its conformance requirements satisfy the regulatory obligation. This serves simultaneously as a compliance tool for enterprises, a reference document for national supervisory authorities, and a standards submission demonstrating regulatory relevance.</p>
+
+            <h3>What this requires</h3>
+
+            <p>The path does not require a large organization or significant funding before it begins. It requires a rigorous framework document, a small number of credible institutional validators, and disciplined engagement with the right standards bodies in the right sequence.</p>
+
+            <p>Standards adoption is a multi-year process. The organizations that begin in 2026 will have established institutional presence by the time the regulatory moment makes that presence consequential. The organizations that wait will find themselves adopting a framework rather than shaping one.</p>
+
+            <p>That is the only meaningful difference between being the author of a standard and being a subject of one.</p>
+
+            <p>Human Value Governance begins as a framework authored by one person who saw the problem clearly. It becomes a standard when institutions recognize it fills a gap that regulation has identified but not solved. It becomes infrastructure when the organizations that implement it discover they cannot imagine governing AI without it.</p>
+
+            <blockquote>What are we leaving behind?</blockquote>
+          </section>
+
+
+          <!-- ─────────────────────────────────────────
+               APPENDIX
+               ───────────────────────────────────────── -->
+          <section id="appendix">
+            <h2>Appendix — The Seven Human Value Covenants: Quick Reference</h2>
+
+            <table class="paper-reference-table" aria-label="Seven Covenants Quick Reference">
+              <thead>
+                <tr>
+                  <th>Covenant</th>
+                  <th>Commitment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 — Presence</td>
+                  <td>AI will never replace the human obligation to be present in moments that matter</td>
+                </tr>
+                <tr>
+                  <td>2 — Judgment</td>
+                  <td>AI will never make an irreversible decision without human judgment reviewing it</td>
+                </tr>
+                <tr>
+                  <td>3 — Dignity</td>
+                  <td>AI will never reduce a human being to a score without context and the possibility of being understood as a whole person</td>
+                </tr>
+                <tr>
+                  <td>4 — Growth</td>
+                  <td>We will not hold humans to consistency standards we do not demand of the AI systems evaluating them</td>
+                </tr>
+                <tr>
+                  <td>5 — Transparency</td>
+                  <td>Every human affected by an AI decision has the right to know AI was involved and how to seek human review</td>
+                </tr>
+                <tr>
+                  <td>6 — Wisdom</td>
+                  <td>Experiential wisdom will always be valued above pattern recognition in decisions about human potential</td>
+                </tr>
+                <tr>
+                  <td>7 — Accountability</td>
+                  <td>When AI causes harm to a human being, a human being is accountable — not the algorithm</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p style="margin-top: 32px; font-size: 0.8125rem; color: var(--clr-subtle);">
+              © 2026 Anitha Jagadeesh. Human Value Governance™ is a registered trademark. All rights reserved.
+            </p>
+          </section>
+
+
+          <!-- Document navigation -->
+          <div style="margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--clr-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <a href="index.html" class="btn btn-secondary" style="font-size: 0.8125rem;">← Back to Framework</a>
+            <a href="covenants.html" class="btn btn-primary" style="font-size: 0.8125rem;">Read the Seven Covenants →</a>
+          </div>
+
+        </article>
+        <!-- end .paper-reading -->
+
+      </div>
+      <!-- end .paper-layout -->
+    </div>
+
   </main>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SITE FOOTER
+       ═══════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo-text">Human Value Governance<sup>™</sup></p>
+          <span class="footer-teal-bar" aria-hidden="true"></span>
+          <p>A framework for protecting the irreducible human capacities that AI must never replace.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Framework</h4>
+          <ul>
+            <li><a href="index.html#foundation">Foundation</a></li>
+            <li><a href="index.html#assets">Protected Assets</a></li>
+            <li><a href="index.html#urgency">Why Now</a></li>
+            <li><a href="index.html#audience">Who It's For</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Documents</h4>
+          <ul>
+            <li><a href="white-paper.html">White Paper</a></li>
+            <li><a href="covenants.html">Seven Covenants</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Human Value Governance™. All rights reserved.</p>
+        <p class="tm-note">Human Value Governance is a trademark. Framework content may not be reproduced without attribution.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    })();
+
+    /* Highlight active TOC link on scroll */
+    (function () {
+      var sections = document.querySelectorAll('section[id]');
+      var tocLinks = document.querySelectorAll('.toc-list a');
+      if (!sections.length || !tocLinks.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.getAttribute('id');
+            tocLinks.forEach(function (link) {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-15% 0px -75% 0px' });
+
+      sections.forEach(function (s) { observer.observe(s); });
+    })();
+  </script>
+
 </body>
 </html>

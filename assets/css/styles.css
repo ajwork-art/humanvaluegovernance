@@ -1359,6 +1359,242 @@ hr {
   }
 }
 
+/* ─────────────────────────────────────────────────────────
+   WHITE PAPER: CONTENT-SPECIFIC STYLES
+   ───────────────────────────────────────────────────────── */
+
+/* Large opening question / epigraph */
+.paper-opening-question {
+  font-family: var(--f-serif);
+  font-size: clamp(var(--t-22), 3vw, var(--t-32));
+  font-style: italic;
+  font-weight: 400;
+  color: var(--clr-navy);
+  line-height: 1.45;
+  text-align: center;
+  margin: var(--sp-56) 0 var(--sp-16);
+  padding: var(--sp-40) var(--sp-32);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.paper-opening-answer {
+  font-family: var(--f-serif);
+  font-size: var(--t-18);
+  font-style: italic;
+  color: var(--clr-muted);
+  text-align: center;
+  margin-bottom: var(--sp-56);
+}
+
+/* Failure mode + auditor evidence callout blocks */
+.paper-callout {
+  background: var(--clr-bg);
+  border-left: 3px solid var(--clr-border-dk);
+  padding: var(--sp-28) var(--sp-32);
+  margin: var(--sp-32) 0;
+}
+
+.paper-callout--teal {
+  border-left-color: var(--clr-teal);
+}
+
+.paper-callout h4 {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-subtle);
+  margin-bottom: var(--sp-16);
+}
+
+.paper-callout--teal h4 {
+  color: var(--clr-teal);
+}
+
+.paper-callout p {
+  font-size: var(--t-15);
+  line-height: 1.72;
+  color: var(--clr-muted);
+  margin-bottom: var(--sp-12);
+}
+
+.paper-callout ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paper-callout ul li {
+  position: relative;
+  padding-left: var(--sp-20);
+  margin-bottom: var(--sp-10);
+  font-size: var(--t-15);
+  line-height: 1.68;
+  color: var(--clr-muted);
+}
+
+.paper-callout ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--clr-teal);
+  font-size: var(--t-12);
+}
+
+/* Each covenant entry in Section 8 */
+.paper-covenant-entry {
+  margin-top: var(--sp-64);
+  padding-top: var(--sp-48);
+  border-top: 1px solid var(--clr-border);
+}
+
+.paper-covenant-entry h3 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+.paper-covenant-commitment {
+  font-family: var(--f-serif);
+  font-size: var(--t-20);
+  font-style: italic;
+  color: var(--clr-navy);
+  line-height: 1.55;
+  margin: var(--sp-16) 0 var(--sp-24);
+  padding: var(--sp-20) var(--sp-24);
+  border-left: 3px solid var(--clr-teal);
+  background: var(--clr-teal-faint);
+}
+
+.paper-covenant-scope {
+  font-size: var(--t-14);
+  font-style: italic;
+  color: var(--clr-subtle);
+  line-height: 1.65;
+  margin-bottom: var(--sp-20);
+  padding-bottom: var(--sp-16);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.paper-covenant-scope strong {
+  font-style: normal;
+  color: var(--clr-navy);
+  font-weight: 600;
+}
+
+/* "When AI should / should not" lists in Section 6 */
+.paper-use-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-20) 0 var(--sp-32);
+}
+
+.paper-use-list li {
+  position: relative;
+  padding-left: var(--sp-24);
+  margin-bottom: var(--sp-16);
+  font-size: var(--t-16);
+  line-height: 1.75;
+  color: var(--clr-muted);
+}
+
+.paper-use-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--clr-teal);
+}
+
+/* Action items in Section 10 — per-audience */
+.paper-action-group {
+  margin-top: var(--sp-40);
+  padding-top: var(--sp-32);
+  border-top: 1px solid var(--clr-border);
+}
+
+.paper-action-group h3 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Appendix reference table */
+.paper-reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--sp-32) 0;
+  font-size: var(--t-15);
+}
+
+.paper-reference-table th {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-subtle);
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--clr-bg);
+  border-bottom: 2px solid var(--clr-border);
+}
+
+.paper-reference-table td {
+  padding: 18px 16px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--clr-border);
+  color: var(--clr-muted);
+  line-height: 1.65;
+}
+
+.paper-reference-table td:first-child {
+  font-weight: 600;
+  color: var(--clr-navy);
+  font-size: var(--t-14);
+  white-space: nowrap;
+}
+
+/* Governance test callout box */
+.paper-governance-test {
+  border: 2px solid var(--clr-navy);
+  padding: var(--sp-32) var(--sp-40);
+  margin: var(--sp-40) 0;
+  background: var(--clr-white);
+}
+
+.paper-governance-test h4 {
+  font-family: var(--f-sans);
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-navy);
+  margin-bottom: var(--sp-16);
+}
+
+.paper-governance-test p {
+  font-size: var(--t-16);
+  line-height: 1.75;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-12);
+}
+
+.paper-governance-test p:last-child { margin-bottom: 0; }
+
+.paper-governance-test .test-answer {
+  color: var(--clr-teal);
+  font-weight: 600;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   Print styles for white paper
+   ───────────────────────────────────────────────────────── */
 /* Print styles for white paper */
 @media print {
   .site-header,
