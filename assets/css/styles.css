@@ -1364,7 +1364,7 @@ hr {
    ───────────────────────────────────────────────────────── */
 
 .about-hero {
-  padding: var(--sp-96) 0 var(--sp-80);
+  padding: var(--sp-80) 0 var(--sp-56);
   border-bottom: 1px solid var(--clr-border);
   background: var(--clr-white);
 }
@@ -1384,6 +1384,14 @@ hr {
   font-weight: 500;
   color: var(--clr-muted);
   margin-bottom: 0;
+}
+
+.about-positioning {
+  max-width: 600px;
+  margin-top: var(--sp-24);
+  font-size: var(--t-18);
+  line-height: 1.7;
+  color: var(--clr-muted);
 }
 
 /* Company credential strip */
@@ -1409,31 +1417,23 @@ hr {
   font-weight: 300;
 }
 
-/* Expertise areas grid */
+/* Expertise areas — pill tags */
 .expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-2) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-12);
   margin-top: var(--sp-32);
 }
 
 .expertise-item {
-  padding: var(--sp-20) 0;
-  border-bottom: 1px solid var(--clr-border);
-  font-size: var(--t-16);
-  color: var(--clr-text);
-  display: flex;
-  align-items: center;
-  gap: var(--sp-12);
-}
-
-.expertise-item::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  background: var(--clr-teal);
-  flex-shrink: 0;
+  padding: var(--sp-8) var(--sp-20);
+  background: var(--clr-teal-faint);
+  border: 1px solid #C2EEF3;
+  border-radius: 100px;
+  font-size: var(--t-14);
+  font-weight: 500;
+  color: var(--clr-navy);
+  letter-spacing: 0.01em;
 }
 
 /* Framework statement */
@@ -1476,11 +1476,6 @@ hr {
   color: var(--clr-navy);
 }
 
-@media (max-width: 639px) {
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 
 /* ─────────────────────────────────────────────────────────
