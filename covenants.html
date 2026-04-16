@@ -3,192 +3,503 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Seven Human Value Covenants — Seven governance commitments for protecting irreducible human capacities in the age of AI.">
-  <meta property="og:title" content="The Seven Human Value Covenants — Human Value Governance™">
-  <meta property="og:description" content="Seven governance commitments for protecting what AI must never replace.">
-  <meta property="og:type" content="website">
-
+  <meta name="description" content="The Seven Human Value Covenants — A Framework for Protecting What AI Must Never Replace. Human Value Governance™.">
   <title>The Seven Human Value Covenants — Human Value Governance™</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ── Tokens ────────────────────────────────────── */
+    :root {
+      --navy:      #0B1F3B;
+      --teal:      #0FA3B1;
+      --amber:     #F5A623;
+      --white:     #FFFFFF;
+      --gray-lt:   #F5F7FA;
+      --gray-mid:  #98A2B3;
+      --text:      #1E293B;
+      --text-sec:  #475569;
+      --border:    #E2E8F0;
+      --font:      'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* ── Base ──────────────────────────────────────── */
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── Layout helpers ────────────────────────────── */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── Site Header ───────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .site-logo-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .site-nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-sec);
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: color 150ms, border-color 150ms;
+    }
+
+    .site-nav a:hover { color: var(--navy); }
+    .site-nav a.active { color: var(--navy); border-bottom-color: var(--teal); }
+
+    /* ── Page Header ───────────────────────────────── */
+    .page-header {
+      padding: 72px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .page-title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .page-subtitle {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-sec);
+      margin-bottom: 32px;
+    }
+
+    .page-intro {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-sec);
+      max-width: 640px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Covenant List ─────────────────────────────── */
+    .covenants {
+      padding: 16px 0 80px;
+    }
+
+    /* One covenant block */
+    .covenant {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 36px;
+      align-items: start;
+    }
+
+    .covenant:last-child {
+      border-bottom: none;
+    }
+
+    /* Roman numeral */
+    .covenant-num {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 0.06em;
+      padding-top: 3px;
+      text-align: right;
+    }
+
+    /* Right column */
+    .covenant-body {}
+
+    /* "THE COVENANT OF PRESENCE" */
+    .covenant-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    /* Main commitment statement */
+    .covenant-statement {
+      font-size: clamp(17px, 2.2vw, 21px);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    /* "Applies to…" */
+    .covenant-applies {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-sec);
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .covenant-applies-label {
+      display: inline;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-right: 6px;
+    }
+
+    /* ── Closing Statement ─────────────────────────── */
+    .closing {
+      padding: 56px 0 64px;
+      border-top: 2px solid var(--navy);
+    }
+
+    .closing-text {
+      font-size: clamp(17px, 2.2vw, 22px);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .closing-text em {
+      font-style: normal;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .closing-byline {
+      margin-top: 20px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+    }
+
+    /* ── Site Footer ───────────────────────────────── */
+    .site-footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 56px 0 40px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 32px;
+    }
+
+    .footer-brand-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .footer-teal-bar {
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--teal);
+      margin: 10px 0 16px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      transition: color 150ms;
+    }
+
+    .footer-col ul a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-bottom p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 640px) {
+      .wrap { padding: 0 20px; }
+
+      .site-nav { gap: 16px; }
+      .site-nav a { font-size: 12px; }
+      .site-logo-name { display: none; }
+
+      .page-header { padding: 48px 0 48px; }
+
+      .covenant {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 40px 0;
+      }
+
+      .covenant-num {
+        text-align: left;
+        font-size: 11px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════════════
+  <!-- ════════════════════════════════════
        SITE HEADER
-       ═══════════════════════════════════════════════════ -->
+       ════════════════════════════════════ -->
   <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
+    <div class="wrap">
 
-        <a href="index.html" class="logo" aria-label="Human Value Governance — Home">
-          <img src="assets/images/hvg-logo.png" alt="HVG" class="logo-img">
-          <span class="logo-wordmark">Human Value Governance<sup>™</sup></span>
-        </a>
+      <a href="index.html" class="site-logo" aria-label="Human Value Governance — Home">
+        <img src="assets/images/hvg-logo.png" alt="HVG">
+        <span class="site-logo-name">Human Value Governance<sup style="font-size:0.55em;vertical-align:super;">™</sup></span>
+      </a>
 
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-          <a href="index.html" class="nav-link">Framework</a>
-          <a href="white-paper.html" class="nav-link">White Paper</a>
-          <a href="covenants.html" class="nav-link active">Seven Covenants</a>
-        </nav>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Framework</a>
+        <a href="white-paper.html">White Paper</a>
+        <a href="covenants.html" class="active">Seven Covenants</a>
+      </nav>
 
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
-          aria-expanded="false" aria-controls="site-nav">
-          <span class="nav-toggle-icon" aria-hidden="true">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-          </span>
-        </button>
-
-      </div>
     </div>
   </header>
 
 
   <main>
 
-    <!-- ═══════════════════════════════════════════════════
-         PAGE HEADER — Document style
-         ═══════════════════════════════════════════════════ -->
-    <header class="covenants-doc-header">
-      <div class="container">
+    <!-- ════════════════════════════════════
+         PAGE HEADER
+         ════════════════════════════════════ -->
+    <div class="page-header">
+      <div class="wrap">
 
-        <p class="label">Human Value Governance™</p>
+        <p class="page-eyebrow">Human Value Governance™</p>
+        <h1 class="page-title">The Seven Human<br>Value Covenants</h1>
+        <p class="page-subtitle">A Framework for Protecting What AI Must Never Replace</p>
 
-        <h1 class="covenants-doc-title">The Seven Human<br>Value Covenants</h1>
-
-        <p class="covenants-doc-subtitle">A Framework for Protecting What AI Must Never Replace</p>
-
-        <p class="covenants-doc-preamble">
+        <p class="page-intro">
           A covenant is a binding moral commitment between parties that acknowledges the humanity
           of both sides. An organization that adopts these seven covenants is not simply complying
-          with a framework. It is declaring what kind of organization it chooses to be — and accepting
-          the obligation to prove it.
+          with a framework. It is declaring what kind of organization it chooses to be —
+          and accepting the obligation to prove it.
         </p>
 
       </div>
-    </header>
+    </div>
 
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- ════════════════════════════════════
          SEVEN COVENANTS
-         ═══════════════════════════════════════════════════ -->
-    <div class="covenants-doc-list">
-      <div class="container">
+         ════════════════════════════════════ -->
+    <div class="covenants">
+      <div class="wrap">
 
-        <!-- ── COVENANT I ── -->
-        <article class="covenant-doc-block" id="covenant-1">
-          <div class="covenant-doc-numeral" aria-hidden="true">I</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Presence</p>
-            <p class="covenant-doc-commitment">
+        <!-- I -->
+        <article class="covenant" id="covenant-1">
+          <div class="covenant-num">I</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Presence</p>
+            <p class="covenant-statement">
               AI will never replace the human obligation to be present with another human in moments that matter.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
               Any AI system evaluating, supervising, or managing human interactions where emotional
-              presence or relational quality are material to the outcome — including customer service,
-              patient care, employee support, crisis response, and conflict resolution.
+              presence or relational quality are material to the outcome.
             </p>
           </div>
         </article>
 
-        <!-- ── COVENANT II ── -->
-        <article class="covenant-doc-block" id="covenant-2">
-          <div class="covenant-doc-numeral" aria-hidden="true">II</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Judgment</p>
-            <p class="covenant-doc-commitment">
+        <!-- II -->
+        <article class="covenant" id="covenant-2">
+          <div class="covenant-num">II</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Judgment</p>
+            <p class="covenant-statement">
               AI will never make an irreversible decision about a human being without human judgment reviewing that decision.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
-              Hiring, termination and discipline, performance evaluation affecting compensation or
-              advancement, credit and lending decisions, and any decision that is difficult or impossible
-              to reverse once made.
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
+              Hiring, termination, performance evaluation affecting compensation, credit and lending
+              decisions, and any decision that is difficult or impossible to reverse once made.
             </p>
           </div>
         </article>
 
-        <!-- ── COVENANT III ── -->
-        <article class="covenant-doc-block" id="covenant-3">
-          <div class="covenant-doc-numeral" aria-hidden="true">III</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Dignity</p>
-            <p class="covenant-doc-commitment">
+        <!-- III -->
+        <article class="covenant" id="covenant-3">
+          <div class="covenant-num">III</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Dignity</p>
+            <p class="covenant-statement">
               AI will never reduce a human being to a score, a metric, or a data point without context, nuance, and the possibility of being understood as a whole person.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
               Any AI system that evaluates, ranks, or scores individual human beings — including hiring
               systems, performance management, customer scoring, and credit assessment.
             </p>
           </div>
         </article>
 
-        <!-- ── COVENANT IV ── -->
-        <article class="covenant-doc-block" id="covenant-4">
-          <div class="covenant-doc-numeral" aria-hidden="true">IV</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Growth</p>
-            <p class="covenant-doc-commitment">
+        <!-- IV -->
+        <article class="covenant" id="covenant-4">
+          <div class="covenant-num">IV</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Growth</p>
+            <p class="covenant-statement">
               We will not hold humans to a standard of consistency that we do not also demand of the AI systems evaluating them.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
               Any AI system that evaluates human performance against consistency standards —
               recognizing that human variability is often evidence of judgment, not error.
             </p>
           </div>
         </article>
 
-        <!-- ── COVENANT V ── -->
-        <article class="covenant-doc-block" id="covenant-5">
-          <div class="covenant-doc-numeral" aria-hidden="true">V</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Transparency</p>
-            <p class="covenant-doc-commitment">
+        <!-- V -->
+        <article class="covenant" id="covenant-5">
+          <div class="covenant-num">V</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Transparency</p>
+            <p class="covenant-statement">
               Every human affected by an AI decision has the right to know that AI was involved, what criteria it used, and how to seek human review.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
               Any AI system that materially shapes a decision affecting an individual human being —
               regardless of whether a human being also participated in the process.
             </p>
           </div>
         </article>
 
-        <!-- ── COVENANT VI ── -->
-        <article class="covenant-doc-block" id="covenant-6">
-          <div class="covenant-doc-numeral" aria-hidden="true">VI</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Wisdom</p>
-            <p class="covenant-doc-commitment">
+        <!-- VI -->
+        <article class="covenant" id="covenant-6">
+          <div class="covenant-num">VI</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Wisdom</p>
+            <p class="covenant-statement">
               Experiential wisdom — knowledge that comes only from living, failing, recovering, and growing — will always be valued above pattern recognition in decisions about human potential.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
               Any AI system used to assess, select, or evaluate human beings based on their history,
               trajectory, or potential. Pattern match can inform. It shall not determine.
             </p>
           </div>
         </article>
 
-        <!-- ── COVENANT VII ── -->
-        <article class="covenant-doc-block" id="covenant-7">
-          <div class="covenant-doc-numeral" aria-hidden="true">VII</div>
-          <div class="covenant-doc-content">
-            <p class="covenant-doc-name">The Covenant of Accountability</p>
-            <p class="covenant-doc-commitment">
+        <!-- VII -->
+        <article class="covenant" id="covenant-7">
+          <div class="covenant-num">VII</div>
+          <div class="covenant-body">
+            <p class="covenant-label">The Covenant of Accountability</p>
+            <p class="covenant-statement">
               When AI causes harm to a human being, a human being is accountable for that harm — not the algorithm, not the vendor, not the system.
             </p>
-            <p class="covenant-doc-applies">
-              <strong>Applies to</strong>
+            <p class="covenant-applies">
+              <span class="covenant-applies-label">Applies to</span>
               Every AI deployment in every domain. This is the foundational covenant — the one that
               gives all others their force. Without accountability, governance is theater. With it,
               governance is real.
@@ -200,67 +511,45 @@
     </div>
 
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- ════════════════════════════════════
          CLOSING STATEMENT
-         ═══════════════════════════════════════════════════ -->
-    <div class="covenants-closing">
-      <div class="container">
-        <p class="covenants-closing-text">
-          A covenant without evidence is a statement of intent.
-          <span>With evidence, it is a governance commitment.</span>
+         ════════════════════════════════════ -->
+    <div class="closing">
+      <div class="wrap">
+        <p class="closing-text">
+          A covenant without evidence is a statement of intent.<br>
+          <em>With evidence, it is a governance commitment.</em>
         </p>
-        <p class="covenants-closing-byline">
-          HumanValueGovernance.com &nbsp;·&nbsp; © 2026 Anitha Jagadeesh
-        </p>
+        <p class="closing-byline">HumanValueGovernance.com &nbsp;·&nbsp; © 2026 Anitha Jagadeesh</p>
       </div>
     </div>
-
-
-    <!-- ═══════════════════════════════════════════════════
-         CTA STRIP
-         ═══════════════════════════════════════════════════ -->
-    <section class="cta-strip">
-      <div class="container">
-        <div class="cta-strip-inner">
-
-          <div class="cta-strip-text">
-            <h2>Read the full framework.</h2>
-            <p>The white paper provides the conceptual and operational foundations of HVG.</p>
-          </div>
-
-          <div class="cta-strip-actions">
-            <a href="white-paper.html" class="btn btn-primary">Read the White Paper</a>
-            <a href="index.html" class="btn btn-secondary--on-dark btn">Back to Framework</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
   </main>
 
 
-  <!-- ═══════════════════════════════════════════════════
+  <!-- ════════════════════════════════════
        SITE FOOTER
-       ═══════════════════════════════════════════════════ -->
+       ════════════════════════════════════ -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="wrap">
 
       <div class="footer-inner">
+
         <div class="footer-brand">
-          <p class="footer-logo-text">Human Value Governance<sup>™</sup></p>
+          <p class="footer-brand-name">Human Value Governance<sup style="font-size:0.55em;vertical-align:super;">™</sup></p>
           <span class="footer-teal-bar" aria-hidden="true"></span>
           <p>A framework for protecting the irreducible human capacities that AI must never replace.</p>
         </div>
+
         <div class="footer-col">
           <h4>Framework</h4>
           <ul>
-            <li><a href="index.html#foundation">Foundation</a></li>
+            <li><a href="index.html">Overview</a></li>
             <li><a href="index.html#assets">Protected Assets</a></li>
             <li><a href="index.html#urgency">Why Now</a></li>
-            <li><a href="index.html#audience">Who It's For</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>Documents</h4>
           <ul>
@@ -268,28 +557,16 @@
             <li><a href="covenants.html">Seven Covenants</a></li>
           </ul>
         </div>
+
       </div>
 
       <div class="footer-bottom">
         <p>© 2026 Human Value Governance™. All rights reserved.</p>
-        <p class="tm-note">Human Value Governance is a trademark pending. Framework content may not be reproduced without attribution.</p>
+        <p>Human Value Governance is a trademark pending. Content may not be reproduced without attribution.</p>
       </div>
 
     </div>
   </footer>
-
-
-  <script>
-    (function () {
-      var toggle = document.getElementById('nav-toggle');
-      var nav    = document.getElementById('site-nav');
-      if (!toggle || !nav) return;
-      toggle.addEventListener('click', function () {
-        var isOpen = nav.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    })();
-  </script>
 
 </body>
 </html>
