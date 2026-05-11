@@ -935,6 +935,23 @@ hr {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.paper-ssrn {
+  margin-top: var(--sp-16);
+  font-size: var(--t-13);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.02em;
+}
+
+.paper-ssrn a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.paper-ssrn a:hover {
+  color: #fff;
+}
+
 /* Article layout: TOC sidebar + reading column */
 .paper-layout {
   display: grid;
