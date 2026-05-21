@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Human Value Governance™ Self-Assessment and Audit Tool — Evaluate your organization's conformance with the seven Human Value Covenants.">
+  <title>Self-Assessment Tool — Human Value Governance™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EN6MV2RRG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9EN6MV2RRG');
+  </script>
+
+  <style>
+    /* ============================================================
+       ASSESSMENT-SPECIFIC STYLES
+       (base reset, body, and nav come from assets/css/styles.css)
+       ============================================================ */
+
+    /* Headings use the site serif */
+    h1, h2, h3, h4, h5 {
+      font-family: var(--f-serif);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--clr-navy);
+    }
+
+    a { color: var(--clr-teal); }
+
+    /* ── PROGRESS BAR ─────────────────────────────────────────── */
+    .progress-bar-wrap {
+      background: var(--clr-bg);
+      border-bottom: 1px solid var(--clr-border);
+      padding: 10px 40px;
+      display: none;
+    }
+
+    .progress-bar-wrap.visible { display: block; }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: var(--clr-subtle);
+      font-weight: 500;
+    }
+
+    .progress-track {
+      height: 4px;
+      background: var(--clr-border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--clr-teal);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.35s ease;
+    }
+
+    /* ── LAYOUT ───────────────────────────────────────────────── */
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── PAGE 1 — INTRODUCTION ────────────────────────────────── */
+    .intro-hero {
+      padding: 72px 0 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--clr-border);
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--f-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--clr-teal);
+      margin-bottom: 20px;
+    }
+
+    .intro-hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      color: var(--clr-navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.015em;
+    }
+
+    .intro-hero .sub {
+      font-family: var(--f-serif);
+      font-size: clamp(17px, 2vw, 20px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--clr-muted);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: #FFFBEB;
+      border: 1px solid #B45309;
+      border-left: 4px solid #B45309;
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .disclaimer-label {
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #B45309;
+      margin-bottom: 8px;
+    }
+
+    .disclaimer p {
+      font-size: 13px;
+      color: #92400E;
+      line-height: 1.7;
+    }
+
+    /* Intro form card */
+    .intro-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      padding: 36px;
+      margin-bottom: 48px;
+    }
+
+    .intro-card h3 {
+      font-size: 16px;
+      color: var(--clr-navy);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--clr-border);
+      font-family: var(--f-sans);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .form-field label {
+      display: block;
+      font-family: var(--f-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clr-muted);
+      margin-bottom: 8px;
+    }
+
+    .form-field .opt-note {
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--clr-subtle);
+      font-size: 11px;
+    }
+
+    .form-field input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--clr-border-dk);
+      font-family: var(--f-sans);
+      font-size: 15px;
+      color: var(--clr-text);
+      background: var(--clr-white);
+      transition: border-color var(--trans), box-shadow var(--trans);
+      appearance: none;
+      border-radius: 2px;
+    }
+
+    .form-field input:focus {
+      outline: none;
+      border-color: var(--clr-teal);
+      box-shadow: 0 0 0 3px rgba(15,163,177,0.15);
+    }
+
+    .form-field input[readonly] {
+      background: var(--clr-bg);
+      color: var(--clr-muted);
+    }
+
+    /* How it works */
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--clr-border);
+      border: 1px solid var(--clr-border);
+      margin-bottom: 48px;
+    }
+
+    .hiw-item {
+      background: var(--clr-white);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .hiw-num {
+      font-family: var(--f-serif);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--clr-teal);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .hiw-item h4 {
+      font-family: var(--f-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--clr-navy);
+      margin-bottom: 6px;
+    }
+
+    .hiw-item p {
+      font-size: 13px;
+      color: var(--clr-muted);
+      line-height: 1.6;
+    }
+
+    /* Scoring legend */
+    .score-legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--clr-muted);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── BUTTONS ──────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--clr-navy);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-family: var(--f-sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: background var(--trans), box-shadow var(--trans);
+      text-decoration: none;
+      border-radius: 2px;
+    }
+
+    .btn-primary:hover {
+      background: var(--clr-navy-mid);
+      box-shadow: 0 4px 16px rgba(11,31,59,0.25);
+    }
+
+    .btn-primary:active { transform: translateY(1px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--clr-white);
+      color: var(--clr-navy);
+      border: 1.5px solid var(--clr-border-dk);
+      padding: 12px 26px;
+      font-family: var(--f-sans);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color var(--trans), background var(--trans);
+      border-radius: 2px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--clr-navy);
+      background: var(--clr-bg);
+    }
+
+    /* ── PAGE 2 — ASSESSMENT ──────────────────────────────────── */
+    .assessment-top {
+      padding: 48px 0 28px;
+      border-bottom: 1px solid var(--clr-border);
+      margin-bottom: 32px;
+    }
+
+    .assessment-top h2 {
+      font-size: clamp(26px, 3vw, 34px);
+      color: var(--clr-navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .assessment-top p {
+      font-size: 15px;
+      color: var(--clr-muted);
+      line-height: 1.7;
+    }
+
+    /* Covenant accordion */
+    .covenant-section {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .covenant-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      background: var(--clr-white);
+      transition: background var(--trans);
+      user-select: none;
+      -webkit-user-select: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .covenant-toggle:hover { background: var(--clr-bg); }
+
+    .covenant-toggle.complete { background: #F0FDF4; }
+    .covenant-toggle.complete:hover { background: #DCFCE7; }
+
+    .toggle-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .c-numeral {
+      font-family: var(--f-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--clr-teal);
+      flex-shrink: 0;
+      margin-top: 2px;
+      min-width: 28px;
+    }
+
+    .c-title-block {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .c-title-block h3 {
+      font-family: var(--f-sans);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--clr-navy);
+      margin-bottom: 2px;
+      letter-spacing: 0.01em;
+    }
+
+    .c-commitment-snippet {
+      font-family: var(--f-serif);
+      font-size: 13px;
+      color: var(--clr-subtle);
+      font-style: italic;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .toggle-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    /* Score badge */
+    .score-badge {
+      font-family: var(--f-sans);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 20px;
+      background: var(--clr-teal-faint);
+      color: var(--clr-teal);
+      min-width: 50px;
+      text-align: center;
+      transition: background var(--trans), color var(--trans);
+      white-space: nowrap;
+    }
+
+    .score-badge.s-full    { background: #DCFCE7; color: #166534; }
+    .score-badge.s-high    { background: #DBEAFE; color: #1E40AF; }
+    .score-badge.s-mid     { background: #FEF9C3; color: #854D0E; }
+    .score-badge.s-low     { background: #FEE2E2; color: #991B1B; }
+
+    .chevron {
+      color: var(--clr-subtle);
+      transition: transform 0.25s ease;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .covenant-section.open .chevron { transform: rotate(180deg); }
+
+    /* Covenant body */
+    .covenant-body {
+      display: none;
+      padding: 0 24px 32px;
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .covenant-section.open .covenant-body { display: block; }
+
+    .commitment-block {
+      padding: 24px 0 20px;
+      border-bottom: 1px solid var(--clr-border);
+      margin-bottom: 20px;
+    }
+
+    .block-label {
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--clr-teal);
+      margin-bottom: 10px;
+    }
+
+    .commitment-block blockquote {
+      font-family: var(--f-serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--clr-text);
+      line-height: 1.55;
+      border: none;
+    }
+
+    .scope-block {
+      background: var(--clr-bg);
+      border-left: 3px solid var(--clr-teal-faint);
+      padding: 14px 18px;
+      margin-bottom: 28px;
+    }
+
+    .scope-block .block-label { color: var(--clr-subtle); }
+
+    .scope-block p {
+      font-size: 14px;
+      color: var(--clr-muted);
+      line-height: 1.75;
+    }
+
+    /* Questions */
+    .q-section-label {
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--clr-subtle);
+      margin-bottom: 16px;
+    }
+
+    .question-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .question-item:last-of-type { border-bottom: none; }
+
+    .q-text {
+      font-size: 15px;
+      color: var(--clr-text);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .q-num {
+      font-weight: 600;
+      color: var(--clr-teal);
+      margin-right: 6px;
+    }
+
+    /* Radio pill group */
+    .radio-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .r-opt { position: relative; }
+
+    .r-opt input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .r-opt label {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 16px;
+      border: 1.5px solid var(--clr-border-dk);
+      border-radius: 20px;
+      font-family: var(--f-sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--clr-muted);
+      cursor: pointer;
+      transition: border-color var(--trans), background var(--trans), color var(--trans);
+      white-space: nowrap;
+    }
+
+    .r-opt label:hover {
+      border-color: var(--clr-teal);
+      color: var(--clr-text);
+    }
+
+    .r-opt.yes  input:checked + label { background: #DCFCE7; border-color: #16A34A; color: #166534; font-weight: 500; }
+    .r-opt.par  input:checked + label { background: #FEF9C3; border-color: #CA8A04; color: #854D0E; font-weight: 500; }
+    .r-opt.no   input:checked + label { background: #FEE2E2; border-color: #EF4444; color: #991B1B; font-weight: 500; }
+
+    /* Regulatory alignment tags */
+    .reg-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .reg-row-label {
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-subtle);
+      margin-right: 4px;
+    }
+
+    .reg-tag {
+      background: var(--clr-teal-faint);
+      color: var(--clr-teal);
+      font-family: var(--f-sans);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* Bottom score display in covenant body */
+    .c-score-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .c-score-row .s-label {
+      font-family: var(--f-sans);
+      font-size: 12px;
+      color: var(--clr-subtle);
+      font-weight: 500;
+    }
+
+    .c-score-row .s-val {
+      font-family: var(--f-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--clr-navy);
+    }
+
+    /* Assessment submit area */
+    .assessment-foot {
+      padding: 40px 0 64px;
+      text-align: center;
+    }
+
+    .completion-note {
+      font-size: 14px;
+      color: var(--clr-subtle);
+      margin-top: 12px;
+      transition: color var(--trans);
+    }
+
+    .completion-note.ready { color: var(--clr-teal); }
+
+    /* ── PAGE 3 — RESULTS ─────────────────────────────────────── */
+    .results-top {
+      padding: 56px 0 32px;
+      border-bottom: 1px solid var(--clr-border);
+      margin-bottom: 48px;
+    }
+
+    .results-top h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      color: var(--clr-navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.015em;
+    }
+
+    .results-org {
+      font-size: 16px;
+      color: var(--clr-muted);
+      margin-bottom: 4px;
+    }
+
+    .results-date {
+      font-size: 13px;
+      color: var(--clr-subtle);
+      letter-spacing: 0.02em;
+    }
+
+    /* Overall score — navy, matching the white-paper hero */
+    .overall-block {
+      background: var(--clr-navy);
+      border-bottom: 3px solid var(--clr-teal);
+      padding: 48px 40px;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .overall-score-num {
+      font-family: var(--f-serif);
+      font-size: 88px;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .overall-score-denom {
+      font-size: 32px;
+      font-weight: 400;
+      opacity: 0.5;
+    }
+
+    .overall-level {
+      font-family: var(--f-serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .overall-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Results section headings */
+    .r-heading {
+      font-family: var(--f-serif);
+      font-size: clamp(22px, 2.5vw, 28px);
+      color: var(--clr-navy);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--clr-teal);
+      letter-spacing: -0.01em;
+    }
+
+    /* Scorecard table */
+    .scorecard {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 56px;
+      font-size: 15px;
+    }
+
+    .scorecard th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--clr-bg);
+      border-bottom: 2px solid var(--clr-border);
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-subtle);
+    }
+
+    .scorecard td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--clr-border);
+      color: var(--clr-text);
+      vertical-align: middle;
+    }
+
+    .scorecard tbody tr:last-child td {
+      border-bottom: none;
+      background: var(--clr-bg);
+      font-weight: 600;
+      color: var(--clr-navy);
+    }
+
+    .scorecard .c-num-cell {
+      font-family: var(--f-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--clr-teal);
+    }
+
+    /* Level badges */
+    .lbadge {
+      display: inline-block;
+      font-family: var(--f-sans);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 3px;
+      letter-spacing: 0.03em;
+    }
+
+    .lb-conformant    { background: #DCFCE7; color: #166534; }
+    .lb-developing    { background: #DBEAFE; color: #1E40AF; }
+    .lb-at-risk       { background: #FEF9C3; color: #854D0E; }
+    .lb-nonconformant { background: #FEE2E2; color: #991B1B; }
+
+    /* Gap analysis */
+    .gap-section { margin-bottom: 56px; }
+
+    .gap-card {
+      border: 1px solid var(--clr-border);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .gap-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--clr-bg);
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .gap-card-head h4 {
+      font-family: var(--f-sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--clr-navy);
+    }
+
+    .gap-card-head .score-note {
+      font-family: var(--f-sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--clr-subtle);
+      margin-left: 6px;
+    }
+
+    .gap-card-body { padding: 16px 20px; }
+
+    .gap-sublabel {
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-subtle);
+      margin-bottom: 12px;
+    }
+
+    .gap-q {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--clr-border);
+      font-size: 14px;
+      color: var(--clr-muted);
+      line-height: 1.7;
+    }
+
+    .gap-q:last-child { border-bottom: none; }
+
+    .g-ind {
+      flex-shrink: 0;
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-top: 2px;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+
+    .g-ind.no      { background: #FEE2E2; color: #991B1B; }
+    .g-ind.partial { background: #FEF9C3; color: #854D0E; }
+
+    /* Regulatory alignment table */
+    .reg-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 56px;
+      font-size: 14px;
+    }
+
+    .reg-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--clr-bg);
+      border-bottom: 2px solid var(--clr-border);
+      font-family: var(--f-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-subtle);
+    }
+
+    .reg-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--clr-border);
+      vertical-align: top;
+      line-height: 1.75;
+      color: var(--clr-muted);
+    }
+
+    .reg-table tr:last-child td { border-bottom: none; }
+
+    .reg-fw-name {
+      font-family: var(--f-sans);
+      font-weight: 600;
+      color: var(--clr-navy);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    /* Print / save panel */
+    .print-panel {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .print-panel p {
+      font-size: 14px;
+      color: var(--clr-subtle);
+      margin-top: 12px;
+    }
+
+    /* Email capture */
+    .email-section {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      padding: 36px;
+      margin-bottom: 64px;
+    }
+
+    .email-section h3 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      color: var(--clr-navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .email-section .desc {
+      font-size: 15px;
+      color: var(--clr-muted);
+      margin-bottom: 28px;
+      line-height: 1.75;
+    }
+
+    .email-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .consent-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      accent-color: var(--clr-teal);
+      cursor: pointer;
+    }
+
+    .consent-row label {
+      font-size: 13px;
+      color: var(--clr-muted);
+      line-height: 1.65;
+      cursor: pointer;
+    }
+
+    .privacy-note {
+      font-size: 12px;
+      color: var(--clr-subtle);
+      background: var(--clr-bg);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+
+    /* Status div states — applied by brevo-integration.js */
+    .email-status-success {
+      background: #F0FDF4;
+      border: 1px solid #16A34A;
+      color: #166534;
+    }
+
+    .email-status-error {
+      background: #FEF2F2;
+      border: 1px solid #EF4444;
+      color: #991B1B;
+    }
+
+    /* ── ASSESSMENT FOOTER ────────────────────────────────────── */
+    /* Override shared .footer-inner grid for the assessment's simple link list */
+    .assmt-footer {
+      background: var(--clr-navy);
+      color: white;
+      padding: 56px 40px;
+    }
+
+    .assmt-footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .assmt-footer h4 {
+      font-family: var(--f-serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .assmt-footer a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color var(--trans);
+    }
+
+    .assmt-footer a:hover { color: white; }
+
+    .assmt-footer-copy {
+      margin-top: 28px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .wrap { padding: 0 20px; }
+      .progress-bar-wrap { padding: 10px 20px; }
+      .intro-hero { padding: 48px 0 32px; }
+      .intro-card { padding: 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .how-it-works { grid-template-columns: 1fr; }
+      .covenant-toggle { padding: 16px; }
+      .covenant-body { padding: 0 16px 24px; }
+      .c-commitment-snippet { display: none; }
+      .overall-score-num { font-size: 64px; }
+      .email-grid { grid-template-columns: 1fr; }
+      .scorecard, .reg-table { font-size: 13px; }
+      .scorecard th, .scorecard td,
+      .reg-table th, .reg-table td { padding: 8px 10px; }
+      .assmt-footer { padding: 40px 20px; }
+    }
+
+    /* ── PRINT STYLES ─────────────────────────────────────────── */
+    @media print {
+      .site-header,
+      .progress-bar-wrap,
+      #page-intro,
+      #page-assessment,
+      .print-panel,
+      .email-section,
+      .no-print,
+      .chevron,
+      .btn-primary,
+      .btn-secondary { display: none !important; }
+
+      .page { display: none !important; }
+      #page-results { display: block !important; }
+      .covenant-body { display: block !important; }
+
+      body { font-size: 11px; background: white; }
+
+      .wrap { padding: 0; }
+      .results-top { padding: 12px 0 16px; }
+
+      .overall-block {
+        background: #0B1F3B !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 24px;
+        margin-bottom: 28px;
+      }
+
+      .overall-score-num { font-size: 48px; }
+      .overall-level { font-size: 18px; }
+
+      .scorecard th {
+        background: #f4f4f4 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .gap-card, .scorecard, .reg-table {
+        break-inside: avoid;
+      }
+
+      .print-disclaimer-block {
+        display: block !important;
+      }
+
+      .assmt-footer {
+        background: #0B1F3B !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 16px;
+        margin-top: 24px;
+      }
+    }
+
+    /* Print disclaimer — hidden on screen, visible on print */
+    .print-disclaimer-block {
+      display: none;
+      background: #fffbeb;
+      border: 1px solid #b45309;
+      border-left: 4px solid #b45309;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 11px;
+      color: #92400e;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SITE HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo" aria-label="Human Value Governance — Home">
+        <img src="assets/images/hvg-logo.png" alt="HVG" class="logo-img">
+        <span class="logo-wordmark">Human Value Governance<sup>™</sup></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="white-paper.html" class="nav-link">White Paper</a>
+        <a href="covenants.html" class="nav-link">Covenants</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="assessment.html" class="nav-link active">Assessment</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+        aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<!-- Progress bar (shown during assessment) -->
+<div class="progress-bar-wrap" id="prog-wrap">
+  <div class="wrap">
+    <div class="progress-meta">
+      <span>Assessment Progress</span>
+      <span id="prog-text">0 of 35 questions answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="prog-fill"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 1 — INTRODUCTION
+     ═══════════════════════════════════════════════════════════ -->
+<div id="page-intro" class="page active">
+  <div class="wrap">
+    <div class="intro-hero">
+      <span class="eyebrow">Governance Framework Assessment</span>
+      <h1>Human Value Governance™<br>Self-Assessment and Audit Tool</h1>
+      <p class="sub">Evaluate your organization's conformance with the seven Human Value Covenants</p>
+    </div>
+
+    <div class="disclaimer">
+      <div class="disclaimer-label">Important Notice</div>
+      <p>This tool is provided for organizational self-assessment purposes only. It does not constitute legal advice, regulatory compliance certification, or formal audit. Results are based on self-reported responses. Organizations should seek qualified legal and governance counsel for formal compliance determinations. &copy; 2026 Anitha Jagadeesh. Human Value Governance is a trademark. All rights reserved.</p>
+    </div>
+
+    <div class="intro-card">
+      <h3>Assessment Information</h3>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="org-name">Organization Name <span class="opt-note">(optional)</span></label>
+          <input type="text" id="org-name" placeholder="Enter your organization name" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="assess-date">Assessment Date</label>
+          <input type="text" id="assess-date" readonly>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button class="btn-primary" onclick="startAssessment()">Begin Assessment &rarr;</button>
+      </div>
+    </div>
+
+    <div class="how-it-works">
+      <div class="hiw-item">
+        <div class="hiw-num">35</div>
+        <h4>Assessment Questions</h4>
+        <p>Five questions across each of the seven Human Value Covenants</p>
+      </div>
+      <div class="hiw-item">
+        <div class="hiw-num">3</div>
+        <h4>Response Options</h4>
+        <p>Yes (documented), Partial (incomplete), or No (not in place)</p>
+      </div>
+      <div class="hiw-item">
+        <div class="hiw-num">4</div>
+        <h4>Conformance Levels</h4>
+        <p>Conformant, Developing, At Risk, or Non-Conformant</p>
+      </div>
+    </div>
+
+    <div class="score-legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#16A34A;"></span>Yes — 1 point</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#CA8A04;"></span>Partial — 0.5 points</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#EF4444;"></span>No — 0 points</span>
+    </div>
+  </div>
+</div><!-- /page-intro -->
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 2 — ASSESSMENT
+     ═══════════════════════════════════════════════════════════ -->
+<div id="page-assessment" class="page">
+  <div class="wrap">
+    <div class="assessment-top">
+      <h2>Covenant Assessments</h2>
+      <p>Respond to each question based on documented organizational practice. Undocumented intentions should be scored Partial or No.</p>
+    </div>
+
+    <div id="covenant-list"></div>
+
+    <div class="assessment-foot">
+      <button class="btn-primary" onclick="showResults()">Generate Results Report</button>
+      <p class="completion-note" id="comp-note">Complete all 35 questions to generate your results report.</p>
+    </div>
+  </div>
+</div><!-- /page-assessment -->
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 3 — RESULTS
+     ═══════════════════════════════════════════════════════════ -->
+<div id="page-results" class="page">
+  <div class="wrap">
+
+    <!-- Print-only disclaimer -->
+    <div class="print-disclaimer-block">
+      <strong>Notice:</strong> This tool is provided for organizational self-assessment purposes only. It does not constitute legal advice, regulatory compliance certification, or formal audit. Results are based on self-reported responses. Organizations should seek qualified legal and governance counsel for formal compliance determinations. &copy; 2026 Anitha Jagadeesh. Human Value Governance is a trademark. All rights reserved.
+    </div>
+
+    <div class="results-top">
+      <h2>Assessment Results</h2>
+      <p class="results-org" id="r-org"></p>
+      <p class="results-date" id="r-date"></p>
+    </div>
+
+    <!-- Overall score -->
+    <div class="overall-block" id="overall-block">
+      <div class="overall-score-num" id="r-total">—</div>
+      <div class="overall-level" id="r-level"></div>
+      <div class="overall-desc" id="r-desc"></div>
+    </div>
+
+    <!-- Scorecard -->
+    <h3 class="r-heading">Covenant Scorecard</h3>
+    <table class="scorecard">
+      <thead>
+        <tr>
+          <th style="width:44px;">No.</th>
+          <th>Covenant</th>
+          <th style="width:80px;">Score</th>
+          <th style="width:140px;">Level</th>
+        </tr>
+      </thead>
+      <tbody id="scorecard-body"></tbody>
+    </table>
+
+    <!-- Gap analysis -->
+    <h3 class="r-heading">Priority Gap Analysis</h3>
+    <div id="gap-section" class="gap-section"></div>
+
+    <!-- Regulatory alignment -->
+    <h3 class="r-heading">Regulatory Alignment</h3>
+    <table class="reg-table">
+      <thead>
+        <tr>
+          <th style="width:150px;">Framework</th>
+          <th>Key obligations addressed by this assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="reg-fw-name">EU AI Act</span></td>
+          <td>Art.&nbsp;13 Transparency, Art.&nbsp;14 Human oversight, Art.&nbsp;26 Deployer obligations, Annex&nbsp;III Employment scope</td>
+        </tr>
+        <tr>
+          <td><span class="reg-fw-name">NIST AI RMF</span></td>
+          <td>GOVERN&nbsp;1.1 Policies, MAP&nbsp;1.5 Risk tolerances, MEASURE&nbsp;2.5 Fairness evaluation</td>
+        </tr>
+        <tr>
+          <td><span class="reg-fw-name">ISO/IEC 42001</span></td>
+          <td>&sect;5.3 Roles and authorities, &sect;6.1 Risk management, &sect;9.1 Monitoring</td>
+        </tr>
+        <tr>
+          <td><span class="reg-fw-name">GDPR</span></td>
+          <td>Art.&nbsp;13&ndash;14 Information rights, Art.&nbsp;22 Automated decision rights</td>
+        </tr>
+        <tr>
+          <td><span class="reg-fw-name">CDMC</span></td>
+          <td>Human dignity principle, Audit evidence standards</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Print/save -->
+    <div class="print-panel no-print">
+      <button class="btn-primary" onclick="window.print()">&#128438;&nbsp; Print / Save Results</button>
+      <p>Your results are not stored. Print or save this page to retain your assessment.</p>
+    </div>
+
+    <!-- Email capture -->
+    <div class="email-section no-print" id="email-section">
+      <h3>Get Your Results by Email</h3>
+      <p class="desc">Enter your email to receive your full results summary. Your email is used only to send your results and is never shared or sold.</p>
+
+      <div id="email-form-fields">
+        <div class="email-grid">
+          <div class="form-field">
+            <label for="e-email">Email Address <span style="color:#C0392B;">*</span></label>
+            <input type="email" id="e-email" placeholder="your@organization.com" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="e-org">Organization <span style="color:var(--clr-subtle);font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;">(optional)</span></label>
+            <input type="text" id="e-org" placeholder="Organization name (optional)" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="consent-row">
+          <input type="checkbox" id="e-consent" required>
+          <label for="e-consent">I agree to receive my assessment results and occasional framework updates by email. I can unsubscribe at any time.</label>
+        </div>
+
+        <div class="privacy-note">
+          Your email is used only to send your results and framework updates. It is never shared or sold. You can unsubscribe at any time.
+        </div>
+
+        <button class="btn-secondary" id="sendResultsBtn" onclick="handleEmailFormSubmit(event)">Send My Results</button>
+      </div>
+
+      <div id="emailStatus" role="status" aria-live="polite" style="display:none;margin-top:20px;padding:14px 18px;font-size:14px;line-height:1.65;"></div>
+    </div>
+
+  </div><!-- /wrap -->
+
+  <footer class="assmt-footer">
+    <div class="assmt-footer-inner">
+      <h4>Human Value Governance™</h4>
+      <a href="https://humanvaluegovernance.com">Learn more about implementing Human Value Governance in your organization: humanvaluegovernance.com</a>
+      <a href="https://humanvaluegovernance.com/white-paper.html">White paper and full framework: humanvaluegovernance.com/white-paper.html</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6749102">SSRN Working Paper: papers.ssrn.com/sol3/papers.cfm?abstract_id=6749102</a>
+      <div class="assmt-footer-copy">&copy; 2026 Anitha Jagadeesh &middot; Human Value Governance is a trademark &middot; All rights reserved</div>
+    </div>
+  </footer>
+</div><!-- /page-results -->
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ──────────────────────────────────────────────────────────────
+   COVENANT DATA
+   ────────────────────────────────────────────────────────────── */
+const COVENANTS = [
+  {
+    numeral: 'I',
+    name: 'Presence',
+    commitment: 'AI will never replace the human obligation to be present with another human in moments that matter.',
+    scope: 'Customer service, employee support, patient care, performance management, and any AI system that evaluates or supervises human interactions where emotional presence is material to the outcome.',
+    questions: [
+      'Has your organization identified and documented all interaction contexts where human presence is material to the quality of the outcome?',
+      'Do you maintain a Human Presence Register specifying which interaction types must not be penalized by AI evaluation metrics for extended duration or emotional engagement?',
+      'Are human representatives explicitly protected from AI-generated performance penalties in interactions your organization has classified as presence-critical?',
+      'Do you have documented human escalation pathways for interactions where emotional distress signals are present in the interaction record?',
+      'Is there a named accountable human who reviews and approves the AI evaluation criteria applied to presence-critical interactions?'
+    ],
+    regTags: ['EU AI Act Art. 14', 'NIST AI RMF GOVERN 1.1', 'ISO/IEC 42001 §6.1']
+  },
+  {
+    numeral: 'II',
+    name: 'Judgment',
+    commitment: 'AI will never make an irreversible decision about a human being without human judgment reviewing that decision.',
+    scope: 'Hiring, termination, discipline, performance evaluation affecting compensation or advancement, credit decisions, healthcare triage, and any AI-assisted determination that is difficult or impossible to reverse.',
+    questions: [
+      'Has your organization mapped and formally classified all AI decision points as either reversible or irreversible?',
+      'For every irreversible decision class, is there a named human being with documented authority required to review the AI output before the decision is finalized?',
+      'Are those reviews documented as substantive records showing what was examined, by whom, and what judgment was applied — not merely as a checkbox or timestamp?',
+      'Can individuals affected by irreversible AI-assisted decisions formally request human review of the decision that affected them?',
+      'Do you have a documented escalation pathway for cases where AI output and human judgment are in conflict?'
+    ],
+    regTags: ['EU AI Act Art. 14(5)', 'EU AI Act Annex III', 'GDPR Art. 22', 'NIST AI RMF MAP 1.5']
+  },
+  {
+    numeral: 'III',
+    name: 'Dignity',
+    commitment: 'AI will never reduce a human being to a score, a metric, or a data point without context, nuance, and the possibility of being understood as a whole person.',
+    scope: 'All AI systems that evaluate, rank, score, or produce recommendations about individual human beings — including hiring systems, performance management, customer scoring, and credit assessment.',
+    questions: [
+      'Does every AI scoring or evaluation system include a documented context layer through which human judgment about individual circumstances can be applied before a determination is acted upon?',
+      'Are appeal and review pathways formally established and communicated to the individuals affected by AI-assisted determinations?',
+      'Are those appeal pathways capable of producing a different outcome — not merely confirming the original AI determination?',
+      'Is there documented evidence that AI scores are not used as the sole basis for consequential individual determinations?',
+      'Do you maintain records of context reviews and appeal outcomes that could be reviewed by an external auditor?'
+    ],
+    regTags: ['EU AI Act Art. 13', 'GDPR Art. 22', 'EU AI Act Art. 26(5)', 'NIST AI RMF MEASURE 2.5']
+  },
+  {
+    numeral: 'IV',
+    name: 'Growth',
+    commitment: 'We will not hold humans to a standard of consistency that we do not also demand of the AI systems evaluating them.',
+    scope: 'All AI systems that evaluate human performance against consistency standards — including performance management platforms, quality assurance tools, and hiring evaluation systems.',
+    questions: [
+      'Are the consistency standards applied to human performance evaluations formally documented, including how they account for contextual variability and the exercise of judgment in novel situations?',
+      'Are the AI systems used to evaluate human consistency themselves subject to documented consistency audits?',
+      'Before any AI-generated performance penalty is applied, is there a documented review process to assess whether the variance reflects judgment, contextual response, or developmental growth rather than error?',
+      'Are employees explicitly informed of and protected from AI-generated penalties for exercising judgment, empathy, or discretion that deviates from efficiency benchmarks?',
+      'Is there a named human accountable for reviewing AI consistency evaluation criteria to ensure they do not penalize human qualities your organization values?'
+    ],
+    regTags: ['EU AI Act Art. 9', 'EU AI Act Art. 15', 'ISO/IEC 42001 §9.1', 'NIST AI RMF MEASURE 1.1']
+  },
+  {
+    numeral: 'V',
+    name: 'Transparency',
+    commitment: 'Every human affected by an AI decision has the right to know that AI was involved, what criteria it used, and how to seek human review.',
+    scope: 'All AI systems that materially shape decisions affecting individual human beings — regardless of whether a human being also participated in the decision process.',
+    questions: [
+      'Does your organization formally disclose AI involvement in all consequential decisions affecting individuals — including hiring, performance, credit, and customer service outcomes?',
+      'Are the criteria applied in AI-assisted assessments explained to affected individuals in language they can understand without specialized technical expertise?',
+      'Are human review pathways clearly communicated to affected individuals at the time the AI-assisted decision is made or communicated?',
+      'Are those human review pathways staffed, timely, and demonstrably capable of producing a different outcome?',
+      'Does your organization avoid characterizing AI-assisted decisions as purely human decisions in communications with affected individuals?'
+    ],
+    regTags: ['EU AI Act Art. 13', 'EU AI Act Art. 26(5)', 'GDPR Art. 13–14', 'NIST AI RMF GOVERN 5.1']
+  },
+  {
+    numeral: 'VI',
+    name: 'Wisdom',
+    commitment: 'Experiential wisdom — knowledge that comes only from living, failing, recovering, and growing — will always be valued above pattern recognition in decisions about human potential.',
+    scope: 'All AI systems used to assess, select, promote, or evaluate human beings based on their history, trajectory, or potential — including talent acquisition, succession planning, and performance evaluation.',
+    questions: [
+      'Do your hiring, evaluation, and promotion criteria explicitly include standards for valuing experiential wisdom, non-linear career paths, and backgrounds that fall outside historical success profiles?',
+      'Is there documented guidance specifying how your AI talent systems account for non-standard and non-linear professional backgrounds?',
+      'Is human review formally required for every candidate or employee whose profile is classified as non-standard or below threshold by an AI system before any adverse determination is finalized?',
+      'Is historical pattern-matching formally prohibited from serving as the sole or determinative basis for assessments of an individual\'s future potential?',
+      'Do you track and review the diversity of background, experience type, and career trajectory in your leadership pipeline over time?'
+    ],
+    regTags: ['EU AI Act Annex III §4', 'EU AI Act Art. 10', 'NIST AI RMF MEASURE 2.5', 'EEOC AI Guidance 2023']
+  },
+  {
+    numeral: 'VII',
+    name: 'Accountability',
+    commitment: 'When AI causes harm to a human being, a human being is accountable for that harm — not the algorithm, not the vendor, not the system.',
+    scope: 'Every AI deployment in every domain. This is the foundational covenant — the one that gives all others their force.',
+    questions: [
+      'Is a named individual human being — not a team, function, or vendor — formally designated as accountable for each AI system your organization deploys that affects people?',
+      'Is that accountability documented with the individual\'s name, authority, and specific responsibility for the system\'s outcomes?',
+      'Are accountability chains documented from the deployment decision through to potential human consequences, in a form that could be reconstructed and reviewed if something goes wrong?',
+      'When an AI system has produced a harmful outcome for a human being, has your organization treated the investigation, remediation, and structural prevention as a human accountability matter rather than a technical defect?',
+      'Are AI accountability structures reviewed at the board or senior leadership level at least annually?'
+    ],
+    regTags: ['EU AI Act Art. 25–26', 'EU AI Act Art. 72', 'ISO/IEC 42001 §5.3', 'NIST AI RMF GOVERN 6.1']
+  }
+];
+
+/* ──────────────────────────────────────────────────────────────
+   CONFORMANCE LEVELS
+   ────────────────────────────────────────────────────────────── */
+const OVERALL_LEVELS = [
+  { min: 32, max: 35, label: 'Conformant',      desc: 'Strong governance infrastructure. Maintain and audit quarterly.',                                                   css: 'lb-conformant' },
+  { min: 24, max: 31, label: 'Developing',       desc: 'Core commitments in place. Close evidence gaps within 90 days.',                                                  css: 'lb-developing' },
+  { min: 14, max: 23, label: 'At Risk',          desc: 'Governance exists in policy but not in practice. Remediation plan required.',                                      css: 'lb-at-risk' },
+  { min:  0, max: 13, label: 'Non-Conformant',   desc: 'Significant governance gap. Priority intervention required before AI deployment expands.',                          css: 'lb-nonconformant' }
+];
+
+function getOverallLevel(score) {
+  return OVERALL_LEVELS.find(l => score >= l.min && score <= l.max) || OVERALL_LEVELS[3];
+}
+
+function getCovenantLevel(score) {
+  if (score >= 4.5) return { label: 'Conformant',    css: 'lb-conformant' };
+  if (score >= 3.0) return { label: 'Developing',    css: 'lb-developing' };
+  if (score >= 1.5) return { label: 'At Risk',        css: 'lb-at-risk' };
+  return                    { label: 'Non-Conformant', css: 'lb-nonconformant' };
+}
+
+/* ──────────────────────────────────────────────────────────────
+   STATE
+   ────────────────────────────────────────────────────────────── */
+const answers = {};       // e.g. { 'c0_q2': 0.5 }
+let orgName = '';
+let assessDate = '';
+
+/* ──────────────────────────────────────────────────────────────
+   INIT
+   ────────────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date();
+  const fmt = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  document.getElementById('assess-date').value = fmt;
+  assessDate = fmt;
+
+  buildCovenants();
+});
+
+/* ──────────────────────────────────────────────────────────────
+   BUILD COVENANT SECTIONS
+   ────────────────────────────────────────────────────────────── */
+function buildCovenants() {
+  const list = document.getElementById('covenant-list');
+
+  COVENANTS.forEach((cov, ci) => {
+    const sec = document.createElement('div');
+    sec.className = 'covenant-section';
+    sec.id = 'cov-' + ci;
+
+    const tagsHtml = cov.regTags.map(t => `<span class="reg-tag">${t}</span>`).join('');
+
+    const questionsHtml = cov.questions.map((q, qi) => `
+      <div class="question-item">
+        <p class="q-text"><span class="q-num">${qi + 1}.</span>${q}</p>
+        <div class="radio-group">
+          <div class="r-opt yes">
+            <input type="radio" name="c${ci}q${qi}" id="c${ci}q${qi}y" value="1" onchange="recordAnswer(${ci},${qi},1)">
+            <label for="c${ci}q${qi}y">Yes &mdash; documented evidence exists</label>
+          </div>
+          <div class="r-opt par">
+            <input type="radio" name="c${ci}q${qi}" id="c${ci}q${qi}p" value="0.5" onchange="recordAnswer(${ci},${qi},0.5)">
+            <label for="c${ci}q${qi}p">Partial &mdash; commitment exists, evidence incomplete</label>
+          </div>
+          <div class="r-opt no">
+            <input type="radio" name="c${ci}q${qi}" id="c${ci}q${qi}n" value="0" onchange="recordAnswer(${ci},${qi},0)">
+            <label for="c${ci}q${qi}n">No &mdash; not in place</label>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    sec.innerHTML = `
+      <button class="covenant-toggle" onclick="toggleCovenant(${ci})" aria-expanded="false" aria-controls="body-${ci}">
+        <div class="toggle-left">
+          <span class="c-numeral">${cov.numeral}</span>
+          <div class="c-title-block">
+            <h3>Covenant ${cov.numeral} &mdash; ${cov.name}</h3>
+            <p class="c-commitment-snippet">&ldquo;${cov.commitment}&rdquo;</p>
+          </div>
+        </div>
+        <div class="toggle-right">
+          <span class="score-badge" id="badge-${ci}">0 / 5</span>
+          <span class="chevron" aria-hidden="true">&#8964;</span>
+        </div>
+      </button>
+      <div class="covenant-body" id="body-${ci}" role="region">
+        <div class="commitment-block">
+          <p class="block-label">Commitment</p>
+          <blockquote>&ldquo;${cov.commitment}&rdquo;</blockquote>
+        </div>
+        <div class="scope-block">
+          <p class="block-label">Scope</p>
+          <p>${cov.scope}</p>
+        </div>
+        <p class="q-section-label">Assessment Questions</p>
+        ${questionsHtml}
+        <div class="reg-row">
+          <span class="reg-row-label">Regulatory alignment</span>
+          ${tagsHtml}
+        </div>
+        <div class="c-score-row">
+          <span class="s-label">Covenant ${cov.numeral} Score:</span>
+          <span class="s-val" id="cscore-${ci}">0 / 5</span>
+        </div>
+      </div>
+    `;
+
+    list.appendChild(sec);
+  });
+
+  // Open first covenant by default
+  toggleCovenant(0);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   ACCORDION
+   ────────────────────────────────────────────────────────────── */
+function toggleCovenant(ci) {
+  const sec = document.getElementById('cov-' + ci);
+  const btn = sec.querySelector('.covenant-toggle');
+  const isOpen = sec.classList.contains('open');
+  sec.classList.toggle('open');
+  btn.setAttribute('aria-expanded', !isOpen);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SCORING
+   ────────────────────────────────────────────────────────────── */
+function recordAnswer(ci, qi, val) {
+  answers['c' + ci + '_q' + qi] = val;
+  updateUI();
+}
+
+function getCovenantScore(ci) {
+  let s = 0;
+  for (let qi = 0; qi < 5; qi++) {
+    s += (answers['c' + ci + '_q' + qi] || 0);
+  }
+  return s;
+}
+
+function countAnswered() {
+  return Object.keys(answers).length;
+}
+
+function fmtScore(n) {
+  return n % 1 === 0 ? n.toFixed(0) : n.toFixed(1);
+}
+
+function updateUI() {
+  let totalAnswered = countAnswered();
+
+  COVENANTS.forEach((_, ci) => {
+    const s = getCovenantScore(ci);
+    const answered = [0,1,2,3,4].filter(qi => answers['c' + ci + '_q' + qi] !== undefined).length;
+    const badge = document.getElementById('badge-' + ci);
+    const cscore = document.getElementById('cscore-' + ci);
+    const display = fmtScore(s);
+
+    badge.textContent = display + ' / 5';
+    if (cscore) cscore.textContent = display + ' / 5';
+
+    // Badge color — only style after all five answered
+    badge.className = 'score-badge';
+    if (answered === 5) {
+      if (s >= 4.5)      badge.classList.add('s-full');
+      else if (s >= 3.0) badge.classList.add('s-high');
+      else if (s >= 1.5) badge.classList.add('s-mid');
+      else               badge.classList.add('s-low');
+
+      const btn = document.querySelector('#cov-' + ci + ' .covenant-toggle');
+      btn.classList.add('complete');
+    }
+  });
+
+  // Progress
+  const pct = (totalAnswered / 35) * 100;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = totalAnswered + ' of 35 questions answered';
+
+  // Completion note
+  const note = document.getElementById('comp-note');
+  if (totalAnswered === 35) {
+    note.textContent = 'All 35 questions answered. Ready to generate your results report.';
+    note.classList.add('ready');
+  } else {
+    note.textContent = (35 - totalAnswered) + ' question' + (35 - totalAnswered === 1 ? '' : 's') + ' remaining.';
+    note.classList.remove('ready');
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   NAVIGATION
+   ────────────────────────────────────────────────────────────── */
+function startAssessment() {
+  orgName = document.getElementById('org-name').value.trim();
+  assessDate = document.getElementById('assess-date').value;
+
+  switchPage('page-intro', 'page-assessment');
+  document.getElementById('prog-wrap').classList.add('visible');
+}
+
+function showResults() {
+  // Calculate
+  const scores = COVENANTS.map((_, ci) => getCovenantScore(ci));
+  const total  = scores.reduce((a, b) => a + b, 0);
+  const level  = getOverallLevel(total);
+
+  // Switch page
+  switchPage('page-assessment', 'page-results');
+  document.getElementById('prog-wrap').classList.remove('visible');
+
+  // Header
+  if (orgName) {
+    document.getElementById('r-org').textContent = orgName;
+  }
+  document.getElementById('r-date').textContent = 'Assessment Date: ' + assessDate;
+
+  // Pre-fill email org
+  document.getElementById('e-org').value = orgName;
+
+  // Overall block
+  document.getElementById('r-total').innerHTML = fmtScore(total) + '<span class="overall-score-denom"> / 35</span>';
+  document.getElementById('r-level').textContent = level.label;
+  document.getElementById('r-desc').textContent  = level.desc;
+
+  // Scorecard
+  const tbody = document.getElementById('scorecard-body');
+  tbody.innerHTML = '';
+
+  COVENANTS.forEach((cov, ci) => {
+    const s = scores[ci];
+    const cl = getCovenantLevel(s);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="c-num-cell">${cov.numeral}</td>
+      <td>${cov.name}</td>
+      <td>${fmtScore(s)} / 5</td>
+      <td><span class="lbadge ${cl.css}">${cl.label}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Total row
+  const totalTr = document.createElement('tr');
+  totalTr.innerHTML = `
+    <td colspan="2"><strong>Total</strong></td>
+    <td><strong>${fmtScore(total)} / 35</strong></td>
+    <td><span class="lbadge ${level.css}">${level.label}</span></td>
+  `;
+  tbody.appendChild(totalTr);
+
+  // Gap analysis
+  const gapSec = document.getElementById('gap-section');
+  gapSec.innerHTML = '';
+  let hasGaps = false;
+
+  COVENANTS.forEach((cov, ci) => {
+    const s = scores[ci];
+    if (s >= 4) return;
+    hasGaps = true;
+
+    const cl = getCovenantLevel(s);
+
+    let gapQHtml = '';
+    for (let qi = 0; qi < 5; qi++) {
+      const val = answers['c' + ci + '_q' + qi];
+      if (val === undefined || val < 1) {
+        const v = val === undefined ? 0 : val;
+        const indClass = v === 0 ? 'no' : 'partial';
+        const indLabel = v === 0 ? 'Not in Place' : 'Partial';
+        gapQHtml += `
+          <div class="gap-q">
+            <span class="g-ind ${indClass}">${indLabel}</span>
+            <span>${cov.questions[qi]}</span>
+          </div>
+        `;
+      }
+    }
+
+    const card = document.createElement('div');
+    card.className = 'gap-card';
+    card.innerHTML = `
+      <div class="gap-card-head">
+        <h4>Covenant ${cov.numeral} &mdash; ${cov.name} <span class="score-note">${fmtScore(s)} / 5</span></h4>
+        <span class="lbadge ${cl.css}">${cl.label}</span>
+      </div>
+      <div class="gap-card-body">
+        <p class="gap-sublabel">Priority Gap Identified &mdash; Questions Requiring Attention</p>
+        ${gapQHtml}
+      </div>
+    `;
+    gapSec.appendChild(card);
+  });
+
+  if (!hasGaps) {
+    gapSec.innerHTML = '<p style="color:var(--green-text);font-size:14px;padding:16px 0;">No priority gaps identified. All covenants scored 4.0 or above.</p>';
+  }
+
+  // Store for email
+  window.__assessment = { scores, total, level, orgName, assessDate };
+}
+
+function switchPage(fromId, toId) {
+  document.getElementById(fromId).classList.remove('active');
+  document.getElementById(toId).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* Email is handled by brevo-integration.js — no API key in this file */
+</script>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    })();
+  </script>
+
+  <!-- Brevo integration — no API key in this file or in the browser -->
+  <script src="brevo-integration.js"></script>
+
+</body>
+</html>
