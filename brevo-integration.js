@@ -12,7 +12,7 @@
 'use strict';
 
 // ── Update this after `wrangler deploy` ──────────────────────────────────────
-const WORKER_URL = 'https://hvg-brevo-worker.YOUR-SUBDOMAIN.workers.dev/api/brevo-contact';
+const WORKER_URL = 'https://hvg-brevo-worker.humanvaluegovernance.workers.dev/api/brevo-contact';
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
